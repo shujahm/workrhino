@@ -21,7 +21,7 @@ $setid=1;
 
 
 </head>
-<body class="{{$view_name}}">
+<body class="">
 
    
 
