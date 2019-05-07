@@ -1,0 +1,32 @@
+.pagee {
+	clear: both;
+	float: right;
+	display: inline;
+}
+
+.pagee ul {
+	float: left;
+}
+
+.pagee ul li {
+	float: left;
+	display: inline;
+	margin-right: 3px;
+}
+
+.pagee ul li a {
+	padding: 3px 9px 2px;
+	background: #4e1a67;
+	color: #f9f9f9;
+}
+
+.pagee ul li.on a {
+	background: #ffc600;
+	color: #000;
+}
+
+.pagee ul li span span {
+	color: #bfbfbf;
+	padding: 3px 9px 2px;
+	background: #454545;
+}
