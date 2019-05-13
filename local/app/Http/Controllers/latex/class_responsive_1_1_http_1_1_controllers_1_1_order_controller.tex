@@ -1,0 +1,231 @@
+\hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller}{}\section{Order\+Controller Class Reference}
+\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller}\index{OrderController@{OrderController}}
+Inheritance diagram for Order\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_responsive_1_1_http_1_1_controllers_1_1_order_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a38b94a76ba7d2095c4e69319466928c2}{coupon\+\_\+data}} (Request \$request)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a6192b51d4089dcce6f25b8a866c105ef}{own\+\_\+submission}} (\$price, \$gid, \$type, \$ex\+\_\+text, \$balance\+\_\+type, \$balance)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a69e28a94775ef5e274ed0a73f471fe4e}{own\+\_\+page}} ()
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_ab815b5f462e7953db008052631be760c}{bank\+\_\+submission}} (\$price, \$gid, \$type, \$ex\+\_\+text)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aff08e6d23e1e359171985625ca1d6b47}{success\+\_\+page}} (\$ref\+\_\+id)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_af14a5275fd668010ead7c1f4d82fe778}{payment\+\_\+payumoney\+\_\+process}} (\$price, \$gid, \$type, \$ex\+\_\+text, \$coupon)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aaa3531883a947bece074bf3e9687b552}{payment\+\_\+stripe\+\_\+process}} (\$price, \$gid, \$type, \$ex\+\_\+text, \$coupon)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a8f9a4e44b3365c7ad598fe790f738930}{payment\+\_\+process}} (\$price, \$gid, \$type, \$ex\+\_\+text, \$coupon)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aecb3359d94e561b329b3c8c5ef54a62c}{own\+\_\+success}} (\$price, \$gid, \$request)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_afbc583bcbc53e286acb0a350770a0ec3}{own\+\_\+track}} (\$track\+\_\+id)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_addb6aac1567fa6da7146944f30063322}{sangvish\+\_\+success}} (\$gid, \$ref\+\_\+id, \$admin\+\_\+email)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_ad4318a6b3d8bb110cb44af152f9df7f1}{feature}} (\$id)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a221b305fa5e607dc92641f05c4d75559}{order\+\_\+view}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a564457d40f797becf55bfd3578f44241}{bank\+\_\+payment}} (Request \$request)
+\item 
+\mbox{\hyperlink{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a39992cc1c190dd16b2de573a70a7f5dc}{savedata}} (Request \$request)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file Order\+Controller.\+php.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a095c5d389db211932136b53f25f39685}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a095c5d389db211932136b53f25f39685}} 
+\index{OrderController@{OrderController}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Create a new controller instance.
+
+\begin{DoxyReturn}{Returns}
+void\+Show the application dashboard.
+
+\textbackslash{}\+Illuminate\textbackslash{}\+Http\textbackslash{}\+Response 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file Order\+Controller.\+php.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a564457d40f797becf55bfd3578f44241}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a564457d40f797becf55bfd3578f44241}} 
+\index{OrderController@{OrderController}!bank\_payment@{bank\_payment}}
+\index{bank\_payment@{bank\_payment}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{bank\_payment()}{bank\_payment()}}
+{\footnotesize\ttfamily bank\+\_\+payment (\begin{DoxyParamCaption}\item[{Request}]{\$request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 1837 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_ab815b5f462e7953db008052631be760c}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_ab815b5f462e7953db008052631be760c}} 
+\index{OrderController@{OrderController}!bank\_submission@{bank\_submission}}
+\index{bank\_submission@{bank\_submission}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{bank\_submission()}{bank\_submission()}}
+{\footnotesize\ttfamily bank\+\_\+submission (\begin{DoxyParamCaption}\item[{}]{\$price,  }\item[{}]{\$gid,  }\item[{}]{\$type,  }\item[{}]{\$ex\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1822 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a38b94a76ba7d2095c4e69319466928c2}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a38b94a76ba7d2095c4e69319466928c2}} 
+\index{OrderController@{OrderController}!coupon\_data@{coupon\_data}}
+\index{coupon\_data@{coupon\_data}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{coupon\_data()}{coupon\_data()}}
+{\footnotesize\ttfamily coupon\+\_\+data (\begin{DoxyParamCaption}\item[{Request}]{\$request }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_ad4318a6b3d8bb110cb44af152f9df7f1}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_ad4318a6b3d8bb110cb44af152f9df7f1}} 
+\index{OrderController@{OrderController}!feature@{feature}}
+\index{feature@{feature}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{feature()}{feature()}}
+{\footnotesize\ttfamily feature (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2996 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a221b305fa5e607dc92641f05c4d75559}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a221b305fa5e607dc92641f05c4d75559}} 
+\index{OrderController@{OrderController}!order\_view@{order\_view}}
+\index{order\_view@{order\_view}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{order\_view()}{order\_view()}}
+{\footnotesize\ttfamily order\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3018 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a69e28a94775ef5e274ed0a73f471fe4e}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a69e28a94775ef5e274ed0a73f471fe4e}} 
+\index{OrderController@{OrderController}!own\_page@{own\_page}}
+\index{own\_page@{own\_page}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{own\_page()}{own\_page()}}
+{\footnotesize\ttfamily own\+\_\+page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1815 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a6192b51d4089dcce6f25b8a866c105ef}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a6192b51d4089dcce6f25b8a866c105ef}} 
+\index{OrderController@{OrderController}!own\_submission@{own\_submission}}
+\index{own\_submission@{own\_submission}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{own\_submission()}{own\_submission()}}
+{\footnotesize\ttfamily own\+\_\+submission (\begin{DoxyParamCaption}\item[{}]{\$price,  }\item[{}]{\$gid,  }\item[{}]{\$type,  }\item[{}]{\$ex\+\_\+text,  }\item[{}]{\$balance\+\_\+type,  }\item[{}]{\$balance }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1724 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aecb3359d94e561b329b3c8c5ef54a62c}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aecb3359d94e561b329b3c8c5ef54a62c}} 
+\index{OrderController@{OrderController}!own\_success@{own\_success}}
+\index{own\_success@{own\_success}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{own\_success()}{own\_success()}}
+{\footnotesize\ttfamily own\+\_\+success (\begin{DoxyParamCaption}\item[{}]{\$price,  }\item[{}]{\$gid,  }\item[{}]{\$request }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2462 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_afbc583bcbc53e286acb0a350770a0ec3}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_afbc583bcbc53e286acb0a350770a0ec3}} 
+\index{OrderController@{OrderController}!own\_track@{own\_track}}
+\index{own\_track@{own\_track}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{own\_track()}{own\_track()}}
+{\footnotesize\ttfamily own\+\_\+track (\begin{DoxyParamCaption}\item[{}]{\$track\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2757 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_af14a5275fd668010ead7c1f4d82fe778}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_af14a5275fd668010ead7c1f4d82fe778}} 
+\index{OrderController@{OrderController}!payment\_payumoney\_process@{payment\_payumoney\_process}}
+\index{payment\_payumoney\_process@{payment\_payumoney\_process}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{payment\_payumoney\_process()}{payment\_payumoney\_process()}}
+{\footnotesize\ttfamily payment\+\_\+payumoney\+\_\+process (\begin{DoxyParamCaption}\item[{}]{\$price,  }\item[{}]{\$gid,  }\item[{}]{\$type,  }\item[{}]{\$ex\+\_\+text,  }\item[{}]{\$coupon }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1989 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a8f9a4e44b3365c7ad598fe790f738930}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a8f9a4e44b3365c7ad598fe790f738930}} 
+\index{OrderController@{OrderController}!payment\_process@{payment\_process}}
+\index{payment\_process@{payment\_process}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{payment\_process()}{payment\_process()}}
+{\footnotesize\ttfamily payment\+\_\+process (\begin{DoxyParamCaption}\item[{}]{\$price,  }\item[{}]{\$gid,  }\item[{}]{\$type,  }\item[{}]{\$ex\+\_\+text,  }\item[{}]{\$coupon }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2303 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aaa3531883a947bece074bf3e9687b552}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aaa3531883a947bece074bf3e9687b552}} 
+\index{OrderController@{OrderController}!payment\_stripe\_process@{payment\_stripe\_process}}
+\index{payment\_stripe\_process@{payment\_stripe\_process}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{payment\_stripe\_process()}{payment\_stripe\_process()}}
+{\footnotesize\ttfamily payment\+\_\+stripe\+\_\+process (\begin{DoxyParamCaption}\item[{}]{\$price,  }\item[{}]{\$gid,  }\item[{}]{\$type,  }\item[{}]{\$ex\+\_\+text,  }\item[{}]{\$coupon }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2145 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_addb6aac1567fa6da7146944f30063322}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_addb6aac1567fa6da7146944f30063322}} 
+\index{OrderController@{OrderController}!sangvish\_success@{sangvish\_success}}
+\index{sangvish\_success@{sangvish\_success}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{sangvish\_success()}{sangvish\_success()}}
+{\footnotesize\ttfamily sangvish\+\_\+success (\begin{DoxyParamCaption}\item[{}]{\$gid,  }\item[{}]{\$ref\+\_\+id,  }\item[{}]{\$admin\+\_\+email }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2777 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a39992cc1c190dd16b2de573a70a7f5dc}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_a39992cc1c190dd16b2de573a70a7f5dc}} 
+\index{OrderController@{OrderController}!savedata@{savedata}}
+\index{savedata@{savedata}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{savedata()}{savedata()}}
+{\footnotesize\ttfamily savedata (\begin{DoxyParamCaption}\item[{Request}]{\$request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 3027 of file Order\+Controller.\+php.
+
+\mbox{\Hypertarget{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aff08e6d23e1e359171985625ca1d6b47}\label{class_responsive_1_1_http_1_1_controllers_1_1_order_controller_aff08e6d23e1e359171985625ca1d6b47}} 
+\index{OrderController@{OrderController}!success\_page@{success\_page}}
+\index{success\_page@{success\_page}!OrderController@{OrderController}}
+\subsubsection{\texorpdfstring{success\_page()}{success\_page()}}
+{\footnotesize\ttfamily success\+\_\+page (\begin{DoxyParamCaption}\item[{}]{\$ref\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1980 of file Order\+Controller.\+php.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_order_controller_8php}{Order\+Controller.\+php}}\end{DoxyCompactItemize}
