@@ -211,8 +211,8 @@
 			<p><?php echo $shop[0]->description;?></p><br/>
 		</div>	
 		<div class="col-md-6 contact_address">
-			<h3>Contact Address</h3>
-				<p><span class="lnr lnr-map-marker"></span> <?php echo  ' '.$shop[0]->address;?></p>
+			<h3>Work Timings </h3>
+				
 								<p> <span class="lnr lnr-clock"></span> <?php echo $stime;?> - <?php echo $etime;?></p> 
 			</div>
 				</div>
