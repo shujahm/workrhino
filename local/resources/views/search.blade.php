@@ -147,14 +147,14 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	
 	
 	<div class="row">
-	<div class="col-md-6">
+	<div class="col-md-12">
 	<div class="clearfix"></div>
 	<?php foreach($subsearches as $shop){ 
 	
 	?>
 	
 	
-	<div class="col-md-6">
+	<div class="col-md-4">
 	<?php if($shop->featured=="yes"){?><div class="ribbon"><span>Featured</span></div><?php } ?>
 		<div class="shop-list-page">
 		
@@ -234,7 +234,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	</div>
 	
 	
-	
+	<!--
 	<div class="col-md-6">
 	<?php 
 	$wel_count = count($subsearches);
@@ -336,7 +336,7 @@ function createMarker(results) {
 	
 	
 	</div>
-	
+	-->
 	
 	
 
@@ -368,14 +368,14 @@ function createMarker(results) {
 	
 	
 	<div class="row">
-	<div class="col-md-6">
+	<div class="col-md-12">
 	<div class="clearfix"></div>
 	<?php foreach($shopview as $shop){
 
 	?>
 	
 	
-	<div class="col-md-6">
+	<div class="col-md-4">
 	<?php if($shop->featured=="yes"){?><div class="ribbon"><span>Featured</span></div><?php } ?>
 		<div class="shop-list-page">
 			<div class="shop_pic">
@@ -453,7 +453,7 @@ function createMarker(results) {
 	</div>
 	
 	
-	
+	<!--
 	<div class="col-md-6">
 	<?php 
 	$wel_count = count($shopview);
@@ -555,7 +555,7 @@ function createMarker(results) {
 	
 	
 	</div>
-	
+	-->
 	
 	
 	
