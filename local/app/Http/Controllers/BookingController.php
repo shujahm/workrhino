@@ -122,7 +122,16 @@ class BookingController extends Controller
 		$payment_mode=$data['payment_mode'];
 		
 		$book_address=$data['book_address'];
-		$book_city=$data['book_city'];
+		if(array_key_exists("book_city",$data))
+		{
+			$book_city = $data['book_city'];
+		}
+		else 
+		{
+			$data["book_city"] = "Lahore";
+			$book_city = $data['book_city'];
+		}
+		
 		$book_pincode=$data['book_pincode'];
 		
 		$book_note = $data['book_note'];
