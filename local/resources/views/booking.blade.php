@@ -183,8 +183,8 @@ for($i=$start_time;$i<=$end_time;$i++)
 
 
 <br/>
-<h5><strong>City <span class="require">*</span></strong></h5>
-<input type="text" class="form-control validate[required]" id="book_city" name="book_city" > 
+<h5><strong>City</strong></h5>
+<input type="text" value="Lahore" class="form-control" id="book_city" name="book_city" disabled> 
 
 </div>
 
@@ -227,8 +227,8 @@ for($i=$start_time;$i<=$end_time;$i++)
 </select>
 
 <br/>
-<h5><strong>Pin Code <span class="require">*</span></strong></h5>
-<input type="number" class="form-control validate[required]" id="book_pincode" name="book_pincode" > 
+<h5><strong>Pin Code</strong></h5>
+<input type="number" class="form-control" id="book_pincode" name="book_pincode" > 
 
 </div>
 <div class="clearfix"></div>
