@@ -28,8 +28,8 @@ class SubservicesController extends Controller
 		->leftJoin('services', 'services.id', '=', 'subservices.service')
 		 ->orderBy('subservices.subid','desc')
 		->get();
-
-        return view('admin.subservices', compact('subservices','services'));
+        
+        return view('admin.subservices', compact('subservices',$subservices));
     }
 	
 	public function getservice()
