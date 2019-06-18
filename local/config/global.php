@@ -2,7 +2,7 @@
 
 return [
 
-	'demosite' => 'yes',
+	'demosite' => 'no',
 	'demotxt' => 'Demo disabled'
 
 	
