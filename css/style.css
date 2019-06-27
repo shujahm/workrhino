@@ -1394,7 +1394,7 @@ h4.headingcolor
 	{		
 		font-size:18px;
 		color: #fff !important;
-		background: #438e29 !important;
+		background: #FFCC16 !important;
 	}
 	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
 	{
@@ -1615,21 +1615,21 @@ h4.headingcolor
 
 .navbar-inverse .sangvish_homepage > li > a,.navbar-inverse .sangvish_homepage > .active > a
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 .navbar-inverse .sangvish_otherpage > li > a,.navbar-inverse .sangvish_otherpage > .active > a
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 .navbar-inverse .sangvish_homepage > li > a:hover, .navbar-inverse .sangvish_homepage > .active > a:hover,
 .navbar-inverse .sangvish_homepage .navbar-nav>li>a:focus
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 .navbar-inverse .sangvish_otherpage > li > a:hover, .navbar-inverse .sangvish_otherpage > .active > a:hover,
 .navbar-inverse .sangvish_otherpage.navbar-nav>li>a:focus
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 
 }
@@ -2212,11 +2212,11 @@ footer .footerbar ul li a:hover
 }
 
 .booknow {
-    background: #438E29;
+    background: #FFCC16;
     border: 0;
     color: #fff;
     padding: 10px 0px;
-    border-bottom: 2px solid #438E29;
+    border-bottom: 2px solid #FFCC16;
     border-radius: 0px;
     font-weight: 500;
     margin-top: 20px;
@@ -2292,10 +2292,10 @@ margin:5px auto;
 
 
 .paynow {
-    background: #438E29;
+    background: #FFCC16;
     border: 0;
     color: #fff;
-    border-bottom: 2px solid #438E29;
+    border-bottom: 2px solid #FFCC16;
     padding: 7px 20px;
     font-weight: initial;
     border-radius: 4px;
@@ -2593,7 +2593,7 @@ body {
 {
 	border-radius: 50%; 
     padding: 2px 5px 2px 5px;
-    background: #438e29;
+    background: #FFCC16;
     color: #fff;
 }
 .offsett{
@@ -2728,7 +2728,7 @@ select {
     box-shadow: inset 0 0 0 1px #51af33;
 }
 .bit_apply {
-    background: #3276b1 !important;
+    background: #FFCC16 !important;
     border: 1px solid #3276b;
     color: #fff !important;
     font-weight: 700;
@@ -3212,7 +3212,7 @@ border:0; color:#FB8C00; font-weight:bold;margin-top: 28px;float: left;
 }
 .pagee ul li a{background:#000 !important;}
 .pagee ul li.on a {
-    background: #438e29 !important;
+    background: #FFCC16 !important;
 	color: #fff !important;
 }
 .pagee ul li span span
@@ -3370,13 +3370,13 @@ input:-moz-placeholder { /* Firefox 18- */
 }
 .ui-menu .ui-menu-item a {
     background-color: #ffffff;
-	color: #438e29;
+	color: #FFCC16;
 	font-size: 16px;
 	padding: 20px !important;
 	font-weight: 700;
 }
 .ui-menu .ui-menu-item a:hover {
-    background-color: #438e29 !important;
+    background-color: #FFCC16 !important;
 	color: white;
 }
 .works span.count {
@@ -3582,8 +3582,8 @@ html, body{
 }
 .btn-primary {
     color: #fff;
-    background-color: #3276b1;
-    border-color: #285e8e;
+    background-color: #FFCC16;
+    border-color: #FFCC16;
 }
 .btn-info {
     color: #fff;
@@ -3639,21 +3639,21 @@ h1.headingcolor {
 }
 .navbar-inverse .sangvish_homepage > li > a,.navbar-inverse .sangvish_homepage > .active > a
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 .navbar-inverse .sangvish_otherpage > li > a,.navbar-inverse .sangvish_otherpage > .active > a
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 .navbar-inverse .sangvish_homepage > li > a:hover, .navbar-inverse .sangvish_homepage > .active > a:hover,
 .navbar-inverse .sangvish_homepage .navbar-nav>li>a:focus
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 .navbar-inverse .sangvish_otherpage > li > a:hover, .navbar-inverse .sangvish_otherpage > .active > a:hover,
 .navbar-inverse .sangvish_otherpage.navbar-nav>li>a:focus
 {
-	color:#438e29 !important;
+	color:#FFCC16 !important;
 }
 }
 @media (max-width: 767px) {
