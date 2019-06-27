@@ -1385,7 +1385,7 @@ h4.headingcolor
 		font-size:18px;
 		color:#555;
 		background:#fff;
-		border: 1px solid #ddd;
+		border: 1px solid #FFCC16;
 	}			
 	#myTab > li.active > a .blok {		
 		color: #fff;
@@ -2203,12 +2203,14 @@ footer .footerbar ul li a:hover
 .customh4 {
     font-size: 15px;
 	line-height:20px;
-    text-align: left;
+	text-align: left;
+	color:#555;
 }
 
 .customh5 {
     font-size: 14px;
-    text-align: left;
+	text-align: left;
+	color:#555;
 }
 
 .booknow {
@@ -2797,7 +2799,7 @@ select {
     border-radius: 6px 0 6px 6px;
 }
 .sv_buyer_req select {
-    border: 1px solid #ddd;
+    border: 1px solid #FFCC16;
 	height: 40px !important;
 width: 100%;
 font-size: 15px;
@@ -2825,7 +2827,7 @@ border:0; color:#FB8C00; font-weight:bold;margin-top: 28px;float: left;
     border: 2px solid #FB8C00 !important;
 }
 .sv_buyer_req  .ui-widget.ui-widget-content {
-    border: 1px solid #ddd;
+    border: 1px solid #FFCC16;
     background: #eee;
 }
 .sv_buyer_req .sv_title {
@@ -2878,12 +2880,12 @@ border:0; color:#FB8C00; font-weight:bold;margin-top: 28px;float: left;
 
 .ashboder
 {
-	border:1px solid #dddddd !important;
+	border:1px solid #FFCC16FFCC16 !important;
 	padding:10px;
 }
 .lines
 {
-	border-top:1px solid #dddddd !important;
+	border-top:1px solid #FFCC16FFCC16 !important;
 	
 }
 
@@ -2899,7 +2901,7 @@ border:0; color:#FB8C00; font-weight:bold;margin-top: 28px;float: left;
 
 .bottombordr
 {
-	border-bottom:1px solid #dddddd;
+	border-bottom:1px solid #FFCC16FFCC16;
 }
 .blue
 {
@@ -3819,7 +3821,7 @@ header.sv_mob_menu .dropdown-menu {
 }
 header.sv_mob_menu .dropdown-menu li {
     padding: 6px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #FFCC16;
 }
 
 
