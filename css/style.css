@@ -2148,6 +2148,16 @@ footer .footerbar ul li a:hover
 	border-radius:0px;
 	padding:7px 20px !important;
 	text-transform:uppercase;
+	background-color:#FFCC16;
+	border-color:#FFCC16;
+}
+
+.custobtn .btn:hover
+{
+	
+	background-color:yellow;
+	border-color:yellow;
+	
 }
 
 .shop-list-page {
@@ -3587,9 +3597,9 @@ html, body{
 	opacity:0.8;
 }
 .btn-success {
-    color: #fff !important;
-    background-color: #47a447;
-    border-color: #398439;
+    color: black !important;
+    background-color: #FFCC16;
+    border-color: #FFCC16;
 }
 .btn-danger {
     color: #fff;
