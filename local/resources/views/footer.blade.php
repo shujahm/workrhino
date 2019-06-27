@@ -10,7 +10,7 @@ $setid=1;
 
 <?php if($ncurrentPath=="index" or $ncurrentPath=="/"){ } else {?>
 <?php if(!empty($setts[0]->site_ads_space)){?>
-<div class="col-md-12 sv_ad_img" align="center">
+<div class="col-md-12 sv_ad_img" align="center" style="background-color:#000000;">
 <?php echo htmlspecialchars_decode($setts[0]->site_ads_space);?>
 </div>
 <div class="clearfix"></div>
@@ -73,7 +73,7 @@ function googleTranslateElementInit() {
 		</div>
 		
 		<div class="col-md-2">
-		<h4>Pages</h4>
+		<h4 style="color:#FFCC16">Pages</h4>
 		<ul>
 		
 		<li><a href="<?php echo $url;?>/about">About </a></li>
@@ -86,7 +86,7 @@ function googleTranslateElementInit() {
 		</div>
 		
 		<div class="col-md-2">
-		<h4>Customers </h4>
+		<h4 style="color:#FFCC16">Customers </h4>
 		<ul>
 		<li><a href="<?php echo $url;?>/how-it-works">How it works </a></li>
 		<li><a href="<?php echo $url;?>/safety">Safety </a></li>
@@ -96,7 +96,7 @@ function googleTranslateElementInit() {
 		</div>
 		
 		<div class="col-md-2">
-		<h4>Pros </h4>
+		<h4 style="color:#FFCC16">Pros </h4>
 		<ul>
 		
 		<li><a href="<?php echo $url;?>/register">Signup </a></li>
@@ -106,7 +106,7 @@ function googleTranslateElementInit() {
 		</div>
 		
 		<div class="col-md-2">
-		<h4>Questions? </h4>
+		<h4 style="color:#FFCC16">Questions? </h4>
 		<ul>
 		<li><a href="<?php echo $url;?>/contact">Contact </a></li>
 		<li><a href="#">Android </a></li>
@@ -129,7 +129,7 @@ function googleTranslateElementInit() {
 	 
 	  <div class="col-md-12">
 	  <div class="col-md-12 paddingoff" align="center">
-	  <p><?php if($setts[0]->site_copyright!=""){?><?php echo $setts[0]->site_copyright; } else {?>&copy; <?php echo date('Y');?>. All Rights Reserved. Designed by Migrateshop<?php } ?></p>
+	  <p style="color:#FFCC16"><?php if($setts[0]->site_copyright!=""){?><?php echo $setts[0]->site_copyright; } else {?>&copy; <?php echo date('Y');?>. All Rights Reserved. Designed by Migrateshop<?php } ?></p>
 	  </div>
 	  
 	  <!--<div class="col-md-6 paddingoff">
