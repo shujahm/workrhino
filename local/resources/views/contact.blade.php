@@ -73,7 +73,7 @@
           </div>
 		  
           <div class="col-lg-6">
-            <input type="submit" class="btn btn-primary" value="Send">
+            <input type="submit" class="btn btn-primary" value="Send" style="background-color:#FFCC16; color:black;">
           </div>
 		  
 		 </div> 
