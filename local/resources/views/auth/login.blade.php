@@ -58,7 +58,7 @@ $ery = 'Please confirm email verfication to login <a href="'.$url.'/index/'.$get
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
 						<div class="login-logo text-center">
-						 <a class="" href="<?php echo $url;?>"><img src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" /></a>
+						 <a class="" href="<?php echo $url;?>"><img style="width:144px;" src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" /></a>
 						</div>
 						<div class="col-sm-12">
 						<div class="col-sm-8 col-sm-offset-2 text-center">

@@ -68,7 +68,7 @@ legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
 figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
 {
 	font-family: Avenir,Avenirlight,Arial,sans-serif;
-	
+	color:white;
 }
 p, li
 {
@@ -2277,7 +2277,12 @@ margin:5px auto;
     text-align: center;
     font-weight: normal;
     line-height: 40px;
-    margin-top:0px;
+	margin-top:0px;
+	color:white;
+}
+
+strong{
+	color:white;
 }
 .booking label {
     width: 100%;
@@ -3833,6 +3838,10 @@ header.sv_mob_menu .dropdown-menu li {
 }
 
 .whiteColor {
+	color: white;
+}
+
+p{
 	color: white;
 }
 

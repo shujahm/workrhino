@@ -24,7 +24,7 @@ $setid=1;
                 
 				<div class="panel-body text-center">
 				<div class="login-logo text-center">
-						 <a class="" href="<?php echo $url;?>"><img src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" /></a>
+						 <a class="" href="<?php echo $url;?>"><img style="width:144px;" src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" /></a>
 					</div>
 				<div class="col-xs-8 col-xs-offset-2">
 					
