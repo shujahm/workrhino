@@ -112,7 +112,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
                                 <button type="submit" class="borbtn-inverse filter-btn form-control btn-lg">
                                     Filter
                                 </button>
-                           
+							
 		</div>
 	
 	
@@ -219,7 +219,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 				
 				
 							
-				<div align="center"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff">View Shop & Book</a></div>
+				<div align="center"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important;">View Shop & Book</a></div>
 			</div> 
 			
 			
@@ -438,7 +438,7 @@ function createMarker(results) {
 				?>
 				<h5><span class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
 							
-				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff">View Shop & Book</a></div>
+				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important">View Shop & Book</a></div>
 			</div> 
 			
 			
@@ -655,7 +655,7 @@ function createMarker(results) {
 				
 				
 							
-				<div align="center"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff">View Shop & Book</a></div>
+				<div align="center"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important;">View Shop & Book</a></div>
 			</div> 
 			
 			
