@@ -377,7 +377,7 @@ class Handler implements ExceptionHandlerContract
 
             $handler->setApplicationPaths(
                 array_flip(Arr::except(
-                    array_flip($files->directories(base_path())), [base_path('vendor')]
+                    array_flip($files->directories(base_path())), [base_path('rhino')]
                 ))
             );
         });

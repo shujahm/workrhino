@@ -21,7 +21,7 @@
 	$(document).ready(function(){
     $('#commission_from').on('change', function() {
 		
-      if ( this.value == 'vendor')
+      if ( this.value == 'rhino')
       {
         $("#vendoronly").show();
 		$("#buyeronly").hide();
