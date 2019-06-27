@@ -306,7 +306,7 @@ to get things done around the home </h1>
 	<div class="clearfix"></div>
 	
 	
-	<div class="works">
+	<div class="works whiteColor">
 	<div class="container">
 	 <div class="col-md-12" align="center"><h1>How it works</h1></div>
 	<div class="row">
@@ -326,7 +326,7 @@ to get things done around the home </h1>
 	  </div>
 	  <div class="media-body">
 		<span class="count">1</span>
-		<h4 class="media-heading">Describe the task</h4>
+		<h4 class="media-heading whiteColor">Describe the task</h4>
 		<p class="">Choose from a variety of home services and select the day and time you'd like a qualified Tasker to show up. Give us the details and we'll find you the help.</p>
 	  </div>
 	</div>
@@ -374,7 +374,7 @@ to get things done around the home </h1>
 	<div class="clearfix"></div>
 	
 	
-	<div class="blog">
+	<div class="blog whiteColor">
 	<div class="clearfix"></div>
 	<div class="container">
 	 <div class="col-md-12" align="center"><h1>Customers use to get millions of projects done<br/> quickly and easily</h1></div>
@@ -462,7 +462,7 @@ to get things done around the home </h1>
 	</div>
 	
 	
-	<div class="video">
+	<div class="video whiteColor">
 	<div class="clearfix"></div>
 	<div class="container">
 	<div class="col-md-12" align="center"><h1>Thousands of professionals are growing their<br/> businesses</h1></div>
