@@ -48,8 +48,8 @@ if(Auth::check())
 		  <!--<li class="active"><a href="#">Join as a pro</a></li>-->
             <?php if (Auth::guest()) {?>
 			
-            <li><a href="<?php echo $url;?>/register">Sign Up</a></li>
-            <li><a href="<?php echo $url;?>/login">Login</a></li>
+            <li><a href="<?php echo $url;?>/register"><div style="color:#000000;">Sign Up</div></a></li>
+            <li><a href="<?php echo $url;?>/login"><div style="color:#000000;">Login</div></a></li>
 			<li><a href="<?php echo $url;?>/new-request"  class="borbtn">Post a Job</a></li>
             <?php } else { ?>
 			<li class="dropdown">
