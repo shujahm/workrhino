@@ -41,7 +41,7 @@ Route::post('/editshop', ['as' => 'editshop', 'uses' => 'ShopController@sangvish
 Route::post('/addshop', ['as' => 'addshop', 'uses' => 'ShopController@sangvish_savedata']);
 
 Route::get('/rhino/{id}', 'VendorController@sangvish_showpage');
-Route::post('/rhino', ['as' => 'vendor', 'uses' => 'VendorController@sangvish_savedata']);
+Route::post('/rhino', ['as' => 'rhino', 'uses' => 'VendorController@sangvish_savedata']);
 
 Route::get('/step2', 'DashboardController@sangvish_step2');
 Route::post('/step2', ['as' => 'step2', 'uses' => 'DashboardController@sangvish_step2data']);

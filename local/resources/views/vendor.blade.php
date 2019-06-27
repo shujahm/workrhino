@@ -341,7 +341,7 @@
 	 <div class="row">
 	 <div class="col-md-12">
         
-		<form class="" name="admin" id="formID" method="post" enctype="multipart/form-data" action="{{ route('vendor') }}">
+		<form class="" name="admin" id="formID" method="post" enctype="multipart/form-data" action="{{ route('rhino') }}">
 		
 		{{ csrf_field() }}
 		<input type="hidden" id="vendor_id" name="vendor_id" value="<?php echo $shop_id; ?>">

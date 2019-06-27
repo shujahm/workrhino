@@ -36,7 +36,7 @@ if(Auth::check())
           <a class="" href="<?php echo $url;?>">
 		   <?php if(!empty($setts[0]->site_logo)){ ?>
 		  
-		  <img src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" />
+		  <img style="max-width: 100px;" src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" />
 		   <?php } ?>
 		   
 		  </a>
