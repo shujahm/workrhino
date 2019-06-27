@@ -117,7 +117,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	<div class="col-md-2 custobtn">
 		                       
 							   
-                                <button type="submit" class="btn btn-success btn-md" style="background-color:#FFCC16; color:black !important;">
+                                <button type="submit" class="btn btn-success btn-md">
                                     Filter
                                 </button>
                            
