@@ -117,7 +117,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	<div class="col-md-2 custobtn">
 		                       
 							   
-                                <button type="submit" class="btn btn-success btn-md">
+                                <button type="submit" class="btn btn-success btn-md" style="background-color:#FFCC16; color:black !important;">
                                     Filter
                                 </button>
                            
@@ -343,7 +343,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	
 	?>
 	<div class="row">
-	<div class="col-md-6">
+	<div class="col-md-12">
 	<div class="clearfix"></div>
 	<?php 
 	
@@ -352,7 +352,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	?>
 	
 	
-	<div class="col-md-6">
+	<div class="col-md-4">
 		<div class="shop-list-page">
 			<div class="shop_pic">
 			<?php 
@@ -417,7 +417,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 				?>
 				<h5><span class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
 							
-				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff">View Shop & Book</a></div>
+				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important;">View Shop & Book</a></div>
 			</div> 
 			
 			
@@ -429,11 +429,11 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 
 
 	
-	<div class="col-md-6">
+	<div class="col-md-6" style="display:none;">
 	<?php 
 	$wel_count = count($newsearches);
 	if(!empty($wel_count)){?>
-	<div id="map_canvas" style="width:100%; min-height:700px; margin-top:30px;"></div>
+	<div id="map_canvas" style="width:100%; min-height:700px; margin-top:30px; display:none;"></div>
     <?php } ?>
 	
   <script type="text/javascript">
@@ -654,7 +654,7 @@ function createMarker(results) {
 				?>
 				<h5><span class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
 							
-				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff">View Shop & Book</a></div>
+				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !imoprtant;">View Shop & Book</a></div>
 			</div> 
 			
 			
