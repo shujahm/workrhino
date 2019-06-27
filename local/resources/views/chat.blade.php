@@ -41,7 +41,7 @@ $(window).load(function() {
 			{
 				if(!empty($check_shop))
 				{
-				$pather = $url."/vendor/".$userr[0]->name;
+				$pather = $url."/rhino/".$userr[0]->name;
 				$class="";
 				}
 				else

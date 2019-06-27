@@ -164,9 +164,9 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 						$paths ='/local/images'.$shopphoto.$shop->cover_photo;
 						if($shop->cover_photo!=""){
 						?>
-						<a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><img src="<?php echo $url.$paths;?>" class="img-responsive imgservice"></a>
+						<a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><img src="<?php echo $url.$paths;?>" class="img-responsive imgservice"></a>
 						<?php } else { ?>
-						<a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><img src="<?php echo $url.'/local/images/no-image-big.jpg';?>" class="img-responsive imgservice"></a>
+						<a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><img src="<?php echo $url.'/local/images/no-image-big.jpg';?>" class="img-responsive imgservice"></a>
 						<?php } ?>
 			</div>
 			<div class="col-lg-12 imgthumb">
@@ -189,7 +189,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 		}
 		?>
 			<div class="col-lg-12 shop_content">
-				<h4 class="sv_shop_style"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><?php echo $shop->shop_name; ?></a></h4>
+				<h4 class="sv_shop_style"><a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><?php echo $shop->shop_name; ?></a></h4>
 				
 				<img src="<?php echo $url.$starpath;?>" alt="rated <?php if($shop->rating==""){ echo "0"; } else { echo $shop->rating; }?> stars" class="star_rates" />
 				<?php /* ?><h5><span class="lnr lnr-map-marker"></span>&nbsp;<?php echo $shop->city; ?></h5><?php */?>
@@ -219,7 +219,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 				
 				
 							
-				<div align="center"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important; border-color:#FFCC16;">View Shop & Book</a></div>
+				<div align="center"><a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important; border-color:#FFCC16;">View Shop & Book</a></div>
 			</div> 
 			
 			
@@ -248,7 +248,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
     
 var locations = [
 <?php foreach($subsearches as $shop){ ?>
-    ['<?php echo $shop->shop_name;?>', '<?php echo $shop->address;?>', '<?php echo $url;?>/vendor/<?php echo $shop->name;?>'],
+    ['<?php echo $shop->shop_name;?>', '<?php echo $shop->address;?>', '<?php echo $url;?>/rhino/<?php echo $shop->name;?>'],
 <?php } ?>    
 ];
 
@@ -384,9 +384,9 @@ function createMarker(results) {
 						$paths ='/local/images'.$shopphoto.$shop->cover_photo;
 						if(!empty($shop->cover_photo)){
 						?>
-						<a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><img src="<?php echo $url.$paths;?>" class="img-responsive imgservice"></a>
+						<a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><img src="<?php echo $url.$paths;?>" class="img-responsive imgservice"></a>
 						<?php } else { ?>
-						<a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><img src="<?php echo $url.'/local/images/no-image-big.jpg';?>" class="img-responsive imgservice"></a>
+						<a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><img src="<?php echo $url.'/local/images/no-image-big.jpg';?>" class="img-responsive imgservice"></a>
 						<?php } ?>
 			</div>
 			
@@ -412,7 +412,7 @@ function createMarker(results) {
 		}
 		?>
 			<div class="col-lg-12 shop_content">
-				<h4 class="sv_shop_style"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><?php echo $shop->shop_name; ?></a></h4>
+				<h4 class="sv_shop_style"><a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><?php echo $shop->shop_name; ?></a></h4>
 				<img src="<?php echo $url.$starpath;?>" alt="rated <?php if($shop->rating==""){ echo "0"; } else { echo $shop->rating; }?> stars" class="star_rates" />
 				<?php /* ?><h5><span class="lnr lnr-map-marker"></span>&nbsp;<?php echo $shop->city; ?></h5><?php */?>
 				
@@ -467,7 +467,7 @@ function createMarker(results) {
     
 var locations = [
 <?php foreach($shopview as $shop){ ?>
-    ['<?php echo $shop->shop_name;?>', '<?php echo $shop->address;?>', '<?php echo $url;?>/vendor/<?php echo $shop->name;?>'],
+    ['<?php echo $shop->shop_name;?>', '<?php echo $shop->address;?>', '<?php echo $url;?>/rhino/<?php echo $shop->name;?>'],
 <?php } ?>    
 ];
 
@@ -600,9 +600,9 @@ function createMarker(results) {
 						$paths ='/local/images'.$shopphoto.$shop->cover_photo;
 						if($shop->cover_photo!=""){
 						?>
-						<a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><img src="<?php echo $url.$paths;?>" class="img-responsive imgservice"></a>
+						<a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><img src="<?php echo $url.$paths;?>" class="img-responsive imgservice"></a>
 						<?php } else { ?>
-						<a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><img src="<?php echo $url.'/local/images/no-image-big.jpg';?>" class="img-responsive imgservice"></a>
+						<a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><img src="<?php echo $url.'/local/images/no-image-big.jpg';?>" class="img-responsive imgservice"></a>
 						<?php } ?>
 			</div>
 			<div class="col-lg-12 imgthumb">
@@ -625,7 +625,7 @@ function createMarker(results) {
 		}
 		?>
 			<div class="col-lg-12 shop_content">
-				<h4 class="sv_shop_style"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" ><?php echo $shop->shop_name; ?></a></h4>
+				<h4 class="sv_shop_style"><a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" ><?php echo $shop->shop_name; ?></a></h4>
 				
 				<img src="<?php echo $url.$starpath;?>" alt="rated <?php if($shop->rating==""){ echo "0"; } else { echo $shop->rating; }?> stars" class="star_rates" />
 				<h5><span class="lnr lnr-map-marker"></span>&nbsp;<?php echo $shop->city; ?></h5>
@@ -655,7 +655,7 @@ function createMarker(results) {
 				
 				
 							
-				<div align="center"><a href="<?php echo $url; ?>/vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important; border-color:#FFCC16;">View Shop & Book</a></div>
+				<div align="center"><a href="<?php echo $url; ?>/rhino/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important; border-color:#FFCC16;">View Shop & Book</a></div>
 			</div> 
 			
 			

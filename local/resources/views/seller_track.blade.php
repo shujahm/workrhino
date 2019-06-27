@@ -275,7 +275,7 @@ if($userr[0]->admin==2)
 		{
 			if(!empty($check_shop))
 			{
-			$pather = $url."/vendor/".$userr[0]->name;
+			$pather = $url."/rhino/".$userr[0]->name;
 			$class="";
 			}
 			else

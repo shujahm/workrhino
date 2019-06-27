@@ -223,15 +223,15 @@ $(function(){
 					if($book->cover_photo!="")
 					{
 				?>
-				<a href="<?php echo $url; ?>/vendor/<?php echo $book->name;?>" target="_blank"><img class="img-responsive newcsl" src="<?php echo $url.$paths;?>" alt=""></a>
+				<a href="<?php echo $url; ?>/rhino/<?php echo $book->name;?>" target="_blank"><img class="img-responsive newcsl" src="<?php echo $url.$paths;?>" alt=""></a>
 				<?php } else { ?>
-				<a href="<?php echo $url; ?>/vendor/<?php echo $book->name;?>" target="_blank">	<img class="img-responsive" src="<?php echo $url.'/local/images/noimage.jpg';?>" alt="" style="min-width:400px; max-height:200px;"></a>
+				<a href="<?php echo $url; ?>/rhino/<?php echo $book->name;?>" target="_blank">	<img class="img-responsive" src="<?php echo $url.'/local/images/noimage.jpg';?>" alt="" style="min-width:400px; max-height:200px;"></a>
 				<?php } ?>
 					
 				</div>
 				
 				<div class="col-lg-4 paddingleft20">
-				<h3 class="sv_shop_style"><a href="<?php echo $url; ?>/vendor/<?php echo $book->name;?>" target="_blank"><?php echo $book->shop_name; ?></a></h3>
+				<h3 class="sv_shop_style"><a href="<?php echo $url; ?>/rhino/<?php echo $book->name;?>" target="_blank"><?php echo $book->shop_name; ?></a></h3>
 					
 					<p><span class="lnr lnr-calendar-full"></span>	<?php echo $book->booking_date; ?> - <span class="lnr lnr-clock"></span>
 						<?php echo $final_time; ?></p>
