@@ -91,7 +91,7 @@ $setid=1;
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="borbtn-inverse form-control btn btn-lg">
+                            <button type="submit" class="borbtn-inverse form-control btn btn-lg" style="color:black;">
                                 Create account
                             </button>
                         </div>
