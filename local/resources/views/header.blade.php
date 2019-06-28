@@ -264,12 +264,12 @@ $(document).ready(function(){
 
 
 
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<span style="font-size:30px;cursor:pointer; color:black;" onclick="openNav()">&#9776;</span>
 
  <a class="" href="<?php echo $url;?>">
 		   <?php if(!empty($setts[0]->site_logo)){ ?>
 		  
-		  <img src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" />
+		  <img style="max-width:70px;" src="<?php echo $url.'/local/images/settings/'.$setts[0]->site_logo;?>" border="0" alt="" />
 		   <?php } ?>
 		   
 		  </a>
