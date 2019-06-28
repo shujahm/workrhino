@@ -640,7 +640,7 @@ body
 }
 .headerbg h1, .headerbg h2 {
     color: #000000;
-    margin: 15px 0;
+    margin: 50px 0 -15px ;
 }
 .notopborder
 {
@@ -847,7 +847,7 @@ body
 }
 
 @media screen and (max-width: 767px) {
-    .headerbg h1{margin:0;}
+    .headerbg h1{margin:20px 0 -20px;}
     #myTab > li.active a
 	{
 		background:#51af33;color:#fff;		
@@ -1734,7 +1734,7 @@ h4.headingcolor
 }
 .video h1
 {
-	line-height:45px;
+	line-height:100px;
 }
 
 .blog-wightbg
@@ -3795,14 +3795,14 @@ header.sv_mob_menu {
     float: right;
 }
 .header_part {
-    background: #51ae33;
+    background: #FFCC16;
     padding: 15px;
     color: #fff;
     font-size: 25px;
 }
 header.sv_mob_menu i {
     margin-right: 10px;
-    color: #51ae33;opacity: 0.7;
+    color: #FFCC16;opacity: 0.7;
 }
 header.sv_mob_menu li {
     list-style: none;
@@ -3826,7 +3826,7 @@ header.sv_mob_menu .dropdown-menu li {
 
 .sv_mob_menu {
     background: #fff;
-    height:55px;
+    height:80px;
     position: fixed;
     top: 0;
     transition: top 0.3s ease-in-out;
@@ -3834,7 +3834,7 @@ header.sv_mob_menu .dropdown-menu li {
 }
 
 .nav-up {
-    top: -55px;
+    top: -75px;
 }
 
 .whiteColor {
