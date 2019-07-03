@@ -88,7 +88,7 @@
 		
 			
 			</h1>
-            <p><?php echo $shop[0]->address;?></p>
+            <p style="display:none;"><?php echo $shop[0]->address;?></p>
         </div>
 		
 		
