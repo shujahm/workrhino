@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    
-
-   @include('style')
 	
+	
+
+	@include('style')
+
+
 <style type="text/css">
 .noborder ul,li { margin:0; padding:0; list-style:none;}
 .noborder .label { color:#000; font-size:16px;}
@@ -29,18 +30,9 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
     <!-- fixed navigation bar -->
     @include('header')
 
-    <!-- slider -->
-    
+	<!-- slider -->
+	
 
-	
-    
-	
-	
-	
-	
-	
-	
-	
 	<div class="clearfix sv_mob_clearfix"></div>
 	
 	
@@ -64,8 +56,8 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
    {!! csrf_field() !!}
    
    
-   
-   
+
+
    
 	<div class="col-sm-4 swidth noborder" >
 	
@@ -84,14 +76,13 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	
 	</div>
 	
-	
-	
 	<div class="col-sm-3 swidth nocity">	
 		
 		<input type="text"  name="city" id="txtPlaces" class="form-control input-lg"  value="<?php echo $city_name;?>">
 	</div>	
 	
 	
+
 	
 	<div class="col-sm-3 swidth nocity">
 	<select name="star_rate" class="form-control input-lg">
@@ -214,7 +205,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 						$etime=$shop->end_time."AM";
 					}
 				?>
-				<h5><span class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
+	<h5><span style="color:#FFCC16" class="lnr lnr-clock"></span>&nbsp; <?php echo $stime ?> - <?php echo $etime; ?></h5>
 				
 				
 				
@@ -436,7 +427,7 @@ function createMarker(results) {
 						$etime=$shop->end_time."AM";
 					}
 				?>
-				<h5><span class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
+				<h5><span style="color:#FFCC16" class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
 							
 				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important; border-color:#FFCC16;">View Shop & Book</a></div>
 			</div> 
@@ -650,7 +641,7 @@ function createMarker(results) {
 						$etime=$shop->end_time."AM";
 					}
 				?>
-				<h5><span class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
+				<h5><span style="color:#FFCC16" class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
 				
 				
 				
