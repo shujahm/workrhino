@@ -167,7 +167,7 @@
 				<div class="col-md-6 nopadding">
 				<h4 class="customh4"><?php echo $sellerservice->subname;?></h4>
 				
-					<h5 class="customh5"><i class="fa fa-info-circle yellows" aria-hidden="true"></i> <?php echo $sellerservice->price;?> <?php echo $setting[0]->site_currency;?> | <?php echo $sellerservice->time . " hr"; ?></h5>
+					<h5 class="customh5"><i class="fa fa-info-circle" style="color:#FFCC16" aria-hidden="true"></i> <?php echo $sellerservice->price;?> <?php echo $setting[0]->site_currency;?> | <?php echo $sellerservice->time . " hr"; ?></h5>
 					
 				</div>
 				
@@ -213,7 +213,7 @@
 		<div class="col-md-6 contact_address">
 			<h3>Work Timings </h3>
 				
-								<p> <span class="lnr lnr-clock"></span> <?php echo $stime;?> - <?php echo $etime;?></p> 
+								<p> <span class="lnr lnr-clock" style="color:#FFCC16"></span> <?php echo $stime;?> - <?php echo $etime;?></p> 
 			</div>
 				</div>
 				
