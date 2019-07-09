@@ -50,7 +50,7 @@
     padding: 4px 5px;
     border: none;
     border-bottom: 1px groove;
-    outline: none;
+    outline: none;    
 }
 
 .ms-options-wrap > .ms-options .ms-selectall {
@@ -86,11 +86,14 @@
     width: 100%;
     padding: 8px 4px;
     margin: 1px 0;
+    color:#FFCC16;
+    
 }
 
 .ms-options-wrap > .ms-options > ul li.selected label,
 .ms-options-wrap > .ms-options > ul label:hover {
-    background-color: #efefef;
+    background-color: #FFCC16;
+    color:white;
 }
 
 .ms-options-wrap > .ms-options > ul input[type="checkbox"] {
