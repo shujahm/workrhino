@@ -276,6 +276,16 @@ Route::group(['middleware' => 'admin'], function () {
 
 });
 
+/* jobs */
+
+Route::get('/admin/request', 'Admin\RequestController@index');
+Route::get('/admin/request-orders', 'Admin\OrdersController@request_index');
+Route::get('/admin/view_request/{id}', 'Admin\RequestController@gig_viewmore');
+Route::get('/admin/request/{status}/{sid}/{id}', 'Admin\RequestController@status');
+Route::get('/admin/request/{id}', 'Admin\RequestController@destroy');
+
+/* jobs */
+
 Route::group(['middleware' => 'web'], function () {
 
     Route::get('/dashboard', 'DashboardController@index');
