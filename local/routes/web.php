@@ -276,15 +276,17 @@ Route::group(['middleware' => 'admin'], function () {
 
 });
 
-/* jobs */
+/* jobs and job orders*/
 
 Route::get('/admin/request', 'Admin\RequestController@index');
 Route::get('/admin/request-orders', 'Admin\OrdersController@request_index');
 Route::get('/admin/view_request/{id}', 'Admin\RequestController@gig_viewmore');
 Route::get('/admin/request/{status}/{sid}/{id}', 'Admin\RequestController@status');
 Route::get('/admin/request/{id}', 'Admin\RequestController@destroy');
+Route::get('/admin/orders/{sid}/{id}', 'Admin\OrdersController@status');
+Route::get('/admin/orders/{id}', 'Admin\OrdersController@destroy');
 
-/* jobs */
+/* jobs and job orders */
 
 Route::group(['middleware' => 'web'], function () {
 
