@@ -76,16 +76,24 @@ function googleTranslateElementInit() {
 		<h4 style="color:#FFCC16">Pages</h4>
 		<ul>
 		
-		<li><a href="<?php echo $url;?>/about">About </a></li>
-		<li><a href="<?php echo $url;?>/terms-conditions">Terms and Conditions </a></li>
-		<li><a href="<?php echo $url;?>/privacy-policy">Privacy Policy </a></li>
-		<li><a href="<?php echo $url;?>/blog">Blog</a></li>
-		<li><a href="<?php echo $url;?>/contact">Contact </a></li>
+		<li style="display:none"><a href="<?php echo $url;?>/about">About </a></li>
+		<li style="display:none"><a href="<?php echo $url;?>/terms-conditions">Terms and Conditions </a></li>
+		<li style="display:none"><a href="<?php echo $url;?>/privacy-policy">Privacy Policy </a></li>
+		<li style="display:none"><a href="<?php echo $url;?>/blog">Blog</a></li>
+		<li style="display:none"><a href="<?php echo $url;?>/contact">Contact </a></li>
+		
+		<li><a href="<?php echo $url;?>/about-us">About Us</a></li>
+		<li><a href="<?php echo $url;?>/become-a-rhino">Become a Rhino</a></li>
+		<li><a href="<?php echo $url;?>/our-services">Our Services</a></li>
+		<li><a href="<?php echo $url;?>/our-locations">Our Locations</a></li>
+		<li><a href="<?php echo $url;?>/terms-and-privacy">Terms & Privacy</a></li>
+		<li><a href="<?php echo $url;?>/privacy-policy">Privacy Policy</a></li>
+
 		</ul>
 		
 		</div>
 		
-		<div class="col-md-2">
+		<div class="col-md-2" style="display:none">
 		<h4 style="color:#FFCC16">Customers </h4>
 		<ul>
 		<li><a href="<?php echo $url;?>/how-it-works">How it works </a></li>
@@ -95,7 +103,7 @@ function googleTranslateElementInit() {
 		</ul>
 		</div>
 		
-		<div class="col-md-2">
+		<div class="col-md-2" style="display:none">
 		<h4 style="color:#FFCC16">Pros </h4>
 		<ul>
 		
@@ -105,7 +113,7 @@ function googleTranslateElementInit() {
 		</ul>
 		</div>
 		
-		<div class="col-md-2">
+		<div class="col-md-2" style="display:none">
 		<h4 style="color:#FFCC16">Questions? </h4>
 		<ul>
 		<li><a href="<?php echo $url;?>/contact">Contact </a></li>
