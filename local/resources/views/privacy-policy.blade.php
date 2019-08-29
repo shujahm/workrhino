@@ -51,7 +51,7 @@ else
 	<div class="video">
 	<div class="clearfix sv_mob_clearfix"></div>
 	<div class="headerbg">
-	 <div class="col-md-12" align="center"><h1><?php if(!empty($privacy[0]->page_title)){ echo $privacy[0]->page_title; }?></h1></div>
+	 <div class="col-md-12" align="center"><h1><?php if(!empty($privacy_policy[0]->page_title)){ echo $privacy_policy[0]->page_title; }?></h1></div>
 	 </div>
 	<div class="container">
 	
@@ -63,8 +63,8 @@ else
 	
 	<?php
 
-    if(!empty($privacy[0]->page_desc)){
-	echo str_replace("'","",$privacy[0]->page_desc);
+    if(!empty($privacy_policy[0]->page_desc)){
+	echo str_replace("'","",$privacy_policy[0]->page_desc);
 	
 	}
 	?>
