@@ -24,50 +24,83 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function sangvish_about()
+    public function sangvish_about_us()
     {
        
-		$about_id = 1;
-		$about = DB::table('pages')
-		       ->where('page_id', '=', $about_id)
+		$about_us_id = 1;
+		$about_us = DB::table('pages')
+		       ->where('page_id', '=', $about_us_id)
 			   ->get();
 	
-		$data = array('about' => $about);
-            return view('about')->with($data);
+		$data = array('about_us' => $about_us);
+            return view('about-us')->with($data);
+    }
+
+    public function sangvish_become_a_rhino()
+    {
+       
+		$become_a_rhino_id = 2;
+		$become_a_rhino = DB::table('pages')
+		       ->where('page_id', '=', $become_a_rhino_id)
+			   ->get();
+	
+		$data = array('become_a_rhino' => $become_a_rhino);
+            return view('become-a-rhino')->with($data);
+    }
+
+    public function sangvish_our_services()
+    {
+       
+		$our_services_id = 3;
+		$our_services = DB::table('pages')
+		       ->where('page_id', '=', $our_services_id)
+			   ->get();
+	
+		$data = array('our_services' => $our_services);
+            return view('our-services')->with($data);
     }
 	
+    public function sangvish_our_locations()
+    {
+       
+		$our_locations_id = 5;
+		$our_locations = DB::table('pages')
+		       ->where('page_id', '=', $our_locations_id)
+			   ->get();
+	
+		$data = array('our_locations' => $our_locations);
+            return view('our-locations')->with($data);
+    }
+
+    public function sangvish_terms_and_privacy()
+    {
+       
+		$terms_and_privacy_id = 6;
+		$terms_and_privacy = DB::table('pages')
+		       ->where('page_id', '=', $terms_and_privacy_id)
+			   ->get();
+	
+		$data = array('terms_and_privacy' => $terms_and_privacy);
+            return view('terms-and-privacy')->with($data);
+    }
+
+    public function sangvish_privacy_policy()
+    {
+       
+		$privacy_policy_id = 7;
+		$privacy_policy = DB::table('pages')
+		       ->where('page_id', '=', $privacy_policy_id)
+			   ->get();
+	
+		$data = array('privacy_policy' => $privacy_policy);
+            return view('privacy-policy')->with($data);
+    }
+
 	public function sangvish_404()
     {
 		return view('404');
-	}
-	
-	public function sangvish_terms()
-    {
-       
-		$term_id = 2;
-		$term = DB::table('pages')
-		       ->where('page_id', '=', $term_id)
-			   ->get();
+    }
 		
-		$data = array('term' => $term);
-            return view('terms-conditions')->with($data);
-    }
-	
-	
-	
-	public function sangvish_privacy()
-    {
-       
-		$privacy_id = 3;
-		$privacy = DB::table('pages')
-		       ->where('page_id', '=', $privacy_id)
-			   ->get();
-	
-		$data = array('privacy' => $privacy);
-            return view('privacy-policy')->with($data);
-    }
-	
-	
 	
 	public function sangvish_contact()
     {
@@ -81,51 +114,7 @@ class PageController extends Controller
             return view('contact')->with($data);
     }
 	
-	
-	
-	public function sangvish_howit()
-    {
-       
-		$how_id = 5;
-		$how = DB::table('pages')
-		       ->where('page_id', '=', $how_id)
-			   ->get();
-	
-		$data = array('how' => $how);
-            return view('how-it-works')->with($data);
-    }
-	
-	
-	
-	
-	public function sangvish_safety()
-    {
-       
-		$safety_id = 6;
-		$safety = DB::table('pages')
-		       ->where('page_id', '=', $safety_id)
-			   ->get();
-	
-		$data = array('safety' => $safety);
-            return view('safety')->with($data);
-    }
-	
-	
-	
-	public function sangvish_guide()
-    {
-       
-		$guide_id = 7;
-		$guide = DB::table('pages')
-		       ->where('page_id', '=', $guide_id)
-			   ->get();
-	
-		$data = array('guide' => $guide);
-            return view('service-guide')->with($data);
-    }
-	
-	
-	
+
 	public function sangvish_topages()
     {
        
@@ -137,23 +126,6 @@ class PageController extends Controller
 		$data = array('topages' => $topages);
             return view('how-to-pages')->with($data);
     }
-	
-	
-	
-	public function sangvish_stories()
-    {
-       
-		$stories_id = 9;
-		$stories = DB::table('pages')
-		       ->where('page_id', '=', $stories_id)
-			   ->get();
-	
-		$data = array('stories' => $stories);
-            return view('success-stories')->with($data);
-    }
-	
-	
-	
 	
 	
 	
