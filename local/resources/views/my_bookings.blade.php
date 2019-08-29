@@ -215,7 +215,7 @@ $(function(){
 </script>
 	
 			
-			<div class="row booking_page">
+			<div class="row booking_page" style="background:black">
 				<div class="shop_pic col-lg-4">
 				<?php
 				 $shopphoto="/shop/";
