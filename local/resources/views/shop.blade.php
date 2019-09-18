@@ -23,12 +23,12 @@
 	<div class="video">
 
 	<div class="headerbg">
-	 <div class="col-md-12" align="center"><h1>Shop</h1></div>
+	 <div class="col-md-12" align="center"><h1>Rhino</h1></div>
 	 </div>
 	<div class="">
 	 
 	 
-	 <?php if($shopcount==1){?>
+	 <?php if($shopcount==1 && $shop[0]->status=="approved"){?>
 	 <div class="profile shop">
 		
 		
@@ -88,7 +88,7 @@
 			<h3>Contact Address</h3>
 				<p><span class="lnr lnr-map-marker"></span> <?php echo  ' '.$shop[0]->address;?>
 				</p>
-								<p> <span class="lnr lnr-clock"></span> <?php echo $stime;?> - <?php echo $etime;?></p> 
+								<p style="visibility:hidden"> <span class="lnr lnr-clock"></span> <?php echo $stime;?> - <?php echo $etime;?></p> 
 			</div>
 				</div>
 				
@@ -177,7 +177,7 @@
 	 
 	 <?php } ?>
 	 
-	 
+	 	
 		
 		
      </div>
@@ -194,8 +194,8 @@
 		<div class="row">
 		<div class="col-md-12">
 			<div>
-					<a href="<?php echo $url;?>/editshop/<?php echo $shop[0]->id;?>" class="btn btn-success btn-md radiusoff">Edit Shop</a>
-					<a href="<?php echo $url;?>/services" class="btn btn-danger btn-md radiusoff">Edit Services</a>
+					<a style="display:none" href="<?php echo $url;?>/editshop/<?php echo $shop[0]->id;?>" class="btn btn-success btn-md radiusoff">Edit Shop</a>
+					<a style="display:none" href="<?php echo $url;?>/services" class="btn btn-danger btn-md radiusoff">Edit Services</a>
 					
 				</div>
 			</div>	
@@ -216,9 +216,10 @@
 	</div>	
 	
 	
-	 <?php } ?>
-	 
-		
+	 <?php }else{ ?>
+	 <h3>You are not approved by admin</h3>
+<?php } ?>		
+
 	</div>
 	</div>
 	   
