@@ -104,7 +104,7 @@
 		<a href="<?php echo $url;?>/services" class="btn btn-primary radiusoff">Reset</a>
 		<?php if(config('global.demosite')=="yes"){?><button type="button" class="btn btn-success btn-md radiusoff btndisable">Submit</button> 
 		<span class="disabletxt">( <?php echo config('global.demotxt');?> )</span><?php } else { ?>
-        <button type="submit" class="btn btn-success btn-md radiusoff">
+        <button disabled type="submit" class="btn btn-success btn-md radiusoff">
             Submit
         </button>
 		<?php } ?>
@@ -120,7 +120,7 @@
 	 <?php if(config('global.demosite')=="yes"){?><span class="disabletxt">( <?php echo config('global.demotxt');?> ) </span><button type="button" class="btn btn-primary radiusoff btndisable">Add Services</button> 
 								<?php } else { ?>
 	
-	 <a href="<?php echo $url;?>/services" class="btn btn-primary radiusoff">Add Services</a>
+	 <a href="<?php echo $url;?>/services" class="btn btn-primary radiusoff disabled">Add Services</a>
 								<?php } ?>
 	 
 	 </div>
@@ -133,7 +133,7 @@
       <th>Sno</th>
       <th>Services</th>
       <th>Price</th>
-      <th>Time</th>
+      <th>Hours</th>
 	  <th>Update</th>
 	  <th>Delete</th>
     </tr>
