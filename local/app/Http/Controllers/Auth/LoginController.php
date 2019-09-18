@@ -152,9 +152,24 @@ protected function login(Request $request)
 					return redirect('/admin');
 					
 				}
+			else if(Auth::user()->admin == 2)
+				{	
+					$useremail = Auth::user()->email;
+					$shopcount = DB::table('shop')
+					->where('seller_email', '=', $useremail)
+					->count();
+					if($shopcount != 0)
+					{
+					return redirect('/dashboard');
+					}
+					else
+					{
+					return redirect('/addshop');
+					}
+				}
                 else
 				{					
-				return redirect('/dashboard');
+				return redirect('/index');
 				}
 					
 				
