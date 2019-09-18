@@ -114,7 +114,7 @@ class BookinginfoController extends Controller
 			}
 
 		
-
+		// commission_amt is used a trust duty in percentage
           if($setts[0]->commission_from == "buyer")
 		  {
 		      if($setts[0]->commission_mode=="fixed")
@@ -159,8 +159,8 @@ class BookinginfoController extends Controller
                 ->get();
 
 
-            $get_tax = ($tax_price * $shop[0]->tax_percent) / 100;
-			
+            //$get_tax = ($tax_price * $shop[0]->tax_percent) / 100;
+		$get_tax = ($sum1 * $shop[0]->tax_percent) / 100;
 			$taxer = $shop[0]->tax_percent;
  				
 				
