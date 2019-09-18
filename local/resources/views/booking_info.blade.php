@@ -23,10 +23,10 @@
 	
 	
 	<div class="headerbg">
-	 <div class="col-md-12" align="center"><h1>Booking Details</h1></div>
+	 <div class="col-md-12" align="center"><h1>Booking Details</h1></div><br>
 	 </div>
 	
-	<div class="container">
+	<div class="container" style="background:black">
 	<div class="clearfix"></div>
 	
 	
@@ -37,20 +37,20 @@
 		
 				
 			<p><i class="fa fa-calendar-o" aria-hidden="true"></i> Booking Date - <?php echo $booking[0]->booking_date; ?></p>
-			<p> <i class="fa fa-clock-o" aria-hidden="true"></i>  Booking Time - <?php echo $final_time; ?></p>
+			<p style="display:none"> <i class="fa fa-clock-o" aria-hidden="true"></i>  Booking Time - <?php echo $final_time; ?></p>
 		
 	</div>
 	
 	
 	<div class="col-md-6 service_style">
 	
-	 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+	 <table class="table table-bordered" id="dataTables-example" style="background:black">
             <thead>
                 <tr>
                     <th>Selected Services</th>
-					<th>Price</th>
-					 <th>Service Charge</th>
-					 <th>Tax</th>
+					<th>Price (1 day)</th>
+					 <th>Trust Fee</th>
+					 <th>Services Tax</th>
                 </tr>
             </thead>
 			<tbody>			
@@ -88,7 +88,7 @@ $total_sum = $sum + $get_tax;
 	?>
 	<form class="" name="admin_s" id="formID" method="post" enctype="multipart/form-data" action="{{ route('booking_info') }}">
 	{!! csrf_field() !!}
-	<div class="container">
+	<div class="container" style="background:black">
 <div class="col-md-8"></div>
 
 <div class="col-md-4">
