@@ -6,7 +6,7 @@
 else
 {
 	//redirect()->route('login');
-	
+		
 	echo Redirect::to('login');
 }*/
 ?>   
@@ -233,8 +233,8 @@ $(function(){
 				<div class="col-lg-4 paddingleft20">
 				<h3 class="sv_shop_style"><a href="<?php echo $url; ?>/rhino/<?php echo $book->name;?>" target="_blank"><?php echo $book->shop_name; ?></a></h3>
 					
-					<p><span class="lnr lnr-calendar-full"></span>	<?php echo $book->booking_date; ?> - <span class="lnr lnr-clock"></span>
-						<?php echo $final_time; ?></p>
+					<p><span class="lnr lnr-calendar-full"></span>	<?php echo $book->booking_date; ?>  <span class="lnr lnr-clock" style="display:none"></span>
+						<?php //echo $final_time; ?></p>
 					
 					<?php if($book->payment_mode=="paypal"){ $txt_id = "Txn Id : ".$book->paypal_token; }
 						 else if($book->payment_mode=="stripe"){ $txt_id = "Txn Id : ".$book->stripe_token; }
@@ -262,9 +262,9 @@ $(function(){
                 <a class="btn btn-success btn-green radiusoff" href="#reviews-anchor" id="open-review-box<?php echo $bookk; ?>">Leave a Review</a> <a href="<?php echo $url;?>/send-message/<?php echo Auth::user()->id;?>/<?php echo $book->user_id;?>" class="btn btn-primary btn-md radiusoff">send message</a>
 				
 				<?php if($book->service_complete==1){?>
-				<br/><br/><a href="<?php echo $url;?>/my_bookings/release/<?php echo base64_encode($book->book_id);?>/<?php echo $book->shop_id;?>" class="btn btn-primary radiusoff">Release the payment</a><br/><br/>
+				<br/><br/><a href="<?php echo $url;?>/my_bookings/release/<?php echo base64_encode($book->book_id);?>/<?php echo $book->shop_id;?>" class="btn btn-primary radiusoff" style="display:none">Release the payment</a>
 				
-				<a href="#" class="btn btn-danger radiusoff" data-toggle="modal" data-target="#myDispute<?php echo $book->book_id;?>">Dispute</a>
+				<a href="#" class="btn btn-danger radiusoff" data-toggle="modal" data-target="#myDispute<?php// echo $book->book_id;?>" style="display:none">Dispute</a>
 				
 				
 				<div class="modal fade" id="myDispute<?php echo $book->book_id;?>" role="dialog">
