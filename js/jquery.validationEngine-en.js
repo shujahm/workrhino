@@ -77,6 +77,11 @@
                     "regex": "none",
                     "alertText": "* Invalid credit card number"
                 },
+		"cnicValidate": {
+                    "regex": /^[0-9+]{5}-[0-9+]{7}-[0-9]{1}$/,
+                    "alertText": "* Invalid CNIC number"
+                }
+		,
                 "phone": {
                     // credit: jquery.h5validate.js / orefalo
                     "regex": /^([\+][0-9]{1,3}([ \.\-])?)?([\(][0-9]{1,6}[\)])?([0-9 \.\-]{1,32})(([A-Za-z \:]{1,11})?[0-9]{1,4}?)$/,
