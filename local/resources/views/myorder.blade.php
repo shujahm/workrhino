@@ -52,14 +52,14 @@ else
 	<?php }  else { ?>
 	<div class="col-md-12 service_style">
 	 <div class="table-responsive">
-	 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+	 <table class="table table-bordered" id="dataTables-example" style="background:black">
             <thead>
                 <tr>
                     <th>Order Id</th>
 					<!--<th>Shop Name</th>-->
 					 <th>Services Name</th>
 					 <th>Booking date</th>
-					 <th>Booking time</th>
+					 <!--<th>Booking time</th>-->
 					 <th>Booking Note</th>
 					 
 					 <th>User Name</th>
@@ -70,7 +70,7 @@ else
 					 <th>Reject</th>
 					 <th>Service Complete?</th>
 					 
-					 <?php /* ?><th>Action</th><?php */?>
+					 <?php  ?><th>Action</th><?php  ?>
 					 
                 </tr>
             </thead>
@@ -156,7 +156,7 @@ else
 				<?php /* ?><td><?php echo $viewbook->shop_name;?></td><?php */?>
 				<td><?php echo $ser_name;?></td>
 				<td><?php echo $viewbook->booking_date;?></td>
-				<td><?php echo $final_time;?></td>
+				<!--<td><?php //echo $final_time;?></td>-->
 				
 				<td><?php echo $viewbook->booking_note;?></td>
 				<td>
@@ -171,8 +171,22 @@ else
 				?> 
 			    <td style="color:<?php echo $color;?>;"><?php echo $newbook[0]->status;?></td>
 				
-				<td align="center"><?php if($newbook[0]->status=="paid" && $viewbook->service_complete==0){
-					
+
+				
+				
+				<td align="center"><?php  if($newbook[0]->status=="pending" && $viewbook->service_complete==0){
+					?>
+				<a href="<?php echo $url;?>/myorder/reject/<?php echo base64_encode($bookid);?>" onclick="return confirm('Are you sure you want to do this?');">Reject</a>
+				<?php }  ?>
+				<?php if(!empty($newbook[0]->reject)){?><?php echo $newbook[0]->reject;?><?php } ?>
+				</td>
+
+
+
+
+
+
+				<!--old tag<td align="center"><?php /* if($newbook[0]->status=="paid" && $viewbook->service_complete==0){
 					
 					?>
 				<?php if($source < $destination){?>
@@ -180,12 +194,22 @@ else
 				<a href="<?php echo $url;?>/myorder/reject/<?php echo base64_encode($bookid);?>" onclick="return confirm('Are you sure you want to do this?');">Reject</a>
 				
 				<?php }  ?>
-				<?php }  ?>
-				<?php if(!empty($newbook[0]->reject)){?><?php echo $newbook[0]->reject;?><?php } else { if($viewbook->service_complete!=0){ echo '-'; } } ?>
-				</td>
+				<?php }  */?>
+				<?php /*if(!empty($newbook[0]->reject)){?><?php echo $newbook[0]->reject;?><?php } else { if($viewbook->service_complete!=0){ echo '-'; } } */?>
+				</td>-->
 				 
+
+
+
+
+
+
                 <td align="center"><?php if(empty($newbook[0]->reject)){?><?php if($viewbook->service_complete==0){?><a href="<?php echo $url;?>/myorder/service/<?php echo base64_encode($bookid);?>/1" class="btn btn-primary">Mark as complete</a><?php } ?><?php if($viewbook->service_complete==1){?>Completed<?php } ?>
 				<?php if($viewbook->service_complete==2){?>Released the payment<?php } ?><?php } else { echo '-'; } ?></td>
+		
+		<td align="center"><?php if(empty($newbook[0]->reject)){?><?php if($viewbook->service_complete==0){?>--<?php } ?>    <?php if($viewbook->service_complete==1){?><a href="<?php echo $url;?>/myorderPayment/service/<?php echo base64_encode($bookid);?>/paid" class="btn btn-primary">Mark as paid</a><?php } ?><?php } ?></td>
+
+				
 			</tr>
 			 <?php } ?>
 			 
