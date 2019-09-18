@@ -57,7 +57,9 @@ $setid=1;
 	<div class="video">
 	<div class="clearfix sv_mob_clearfix"></div>
 	<div class="headerbg">
-	 <div class="col-md-12" align="center"><h1>PAYMENT CONFIRMATION</h1></div>
+	 <div class="col-md-12" align="center" style="display:none"><h1>PAYMENT CONFIRMATION</h1></div>
+	<div class="col-md-12" align="center"><h1>THANK YOU FOR BOOKING</h1></div>
+	<div class="col-md-12" align="center"><h4>WE WILL INFORM YOU WITHIN 24 HOURS</h4></div>
 	 </div>
 	
 	<div class="container">
