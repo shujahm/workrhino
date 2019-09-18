@@ -33,7 +33,7 @@ class SettingsController extends Controller
 	
 	public function showform() {
       $settings = DB::select('select * from settings where id = ?',[1]);
-	  $currency=array("USD","CZK","DKK","HKD","HUF","ILS","JPY","MXN","NZD","NOK","PHP","PLN","SGD","SEK","CHF","THB","AUD","CAD","EUR","GBP","AFN","DZD",
+	  $currency=array("USD","CZK","DKK","HKD","HUF","PKR","ILS","JPY","MXN","NZD","NOK","PHP","PLN","SGD","SEK","CHF","THB","AUD","CAD","EUR","GBP","AFN","DZD",
 							"AOA","XCD","ARS","AMD","AWG","SHP","AZN","BSD","BHD","BDT","INR");
 		
 		$withdraw=array("paypal","bank","stripe","payumoney");
