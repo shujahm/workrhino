@@ -59,7 +59,7 @@ $url = URL::to("/");
 		
 		<div class="table-responsive">
 	
-	  <table id="mytable" class="table table-striped table-bordered table-hover">
+	  <table id="mytable" class="table table-bordered" style="background:black">
                    
                    <thead>
                    <tr>
