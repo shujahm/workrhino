@@ -34,6 +34,7 @@ class MybookingsController extends Controller
 		
 		$customer_id = Auth::user()->id;
 		
+		//$book_id = $id;
 		$book_id = base64_decode($id);
 		
 		
@@ -50,7 +51,8 @@ class MybookingsController extends Controller
               
 						->where('id', '=', $shop_id)
 			   
-						->count();		
+						->count();	
+	
 			if(!empty($count_shop))
 			{
 				$get_shop = DB::table('shop')
@@ -166,14 +168,14 @@ class MybookingsController extends Controller
 				  ->leftJoin('users', 'users.email', '=', 'shop.seller_email')
 				 ->where('booking.user_email', '=', $email)
 				 ->where('shop.status', '=', 'approved')
-				  ->whereIn('booking.status', array('paid','refund'))
+				  ->whereIn('booking.status', array('paid','refund','pending'))
 				  
 				  
 				  ->orderBy('booking.book_id', 'desc')
 				  /*->groupBy('booking.shop_id')*/
 				  
 				 ->get();
-				 
+				
 		$count = DB::table('booking')
 		          ->leftJoin('shop', 'shop.id', '=', 'booking.shop_id')
 				   
@@ -181,7 +183,7 @@ class MybookingsController extends Controller
 				  ->leftJoin('users', 'users.email', '=', 'shop.seller_email')
 				 ->where('booking.user_email', '=', $email)
 				  ->where('shop.status', '=', 'approved')
-				  ->whereIn('booking.status', array('paid','refund'))
+				  ->whereIn('booking.status', array('paid','refund','pending'))
 				  ->orderBy('booking.book_id', 'desc')
 				  ->groupBy('booking.shop_id')
 				 ->count();
