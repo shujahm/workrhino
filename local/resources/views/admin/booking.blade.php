@@ -235,7 +235,7 @@
 						 <?php echo $txt_id;?>
 						 </td>
 						   
-						   <?php if($newbook[0]->status=="pending"){ $color="#FB6704"; } else if($newbook[0]->status=="paid")  { $color="#0DE50D"; } else if($newbook[0]->status=="refund")  { $color="#3928D9"; }?> 
+						   <?php if($newbook[0]->status=="pending"){ $color="#FB6704"; } else if($newbook[0]->status=="paid")  { $color="#0DE50D"; } else if($newbook[0]->status=="refund")  { $color="#3928D9"; } else{ $color="#3928D9"; }?> 
 						   <td style="color:<?php echo $color;?>;"><?php echo $newbook[0]->status;?></td>
 						  
 						  
