@@ -51,6 +51,7 @@ if(Auth::check())
             <li><a href="<?php echo $url;?>/register"><div style="color:#000000;">Sign Up</div></a></li>
             <li><a href="<?php echo $url;?>/login"><div style="color:#000000;">Login</div></a></li>
 			<li style="display:none"><a href="<?php echo $url;?>/new-request"  class="borbtn">Post a Job</a></li>
+			<li><a href="<?php echo $url;?>/register2"  class="borbtn">Become a Rhino</a></li>
             <?php } else { ?>
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ Auth::user()->name }} <i class="fa fa-angle-down" aria-hidden="true"></i>
