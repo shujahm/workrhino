@@ -37,6 +37,12 @@ class BookingController extends Controller
 		  $shop = DB::table('shop')
                ->where('id', '=', $shop_id)
                 ->get();
+
+		$current_date = date("Y-m-d");
+		$booking = DB::table('booking')
+		->where('booking_date' , '>=' , $current_date)
+		->get();
+
 		 
 		 
 		 $seller_services=DB::table('seller_services')
@@ -64,13 +70,19 @@ class BookingController extends Controller
 			$days.="day==".$date_id;
 			$days.="||";		
 		}
-		 $days=trim($days,"||");
+		$days=trim($days,"||");
 		
+		$monthsDays = "";
 		
+		for($i=0; $i<$booking->count(); $i++)
+		{
+		$bookingdate = explode("-" , $booking[$i]->booking_date);	
+			$monthsDays.= "(month==".($bookingdate[1]-1)."&&dateDay==".$bookingdate[2].")||";
+		}
+		$monthsDays = trim($monthsDays, "||");
 		
-		
-		
-		
+		//dd($monthsDays);
+
 		
 				
 				
@@ -85,7 +97,7 @@ class BookingController extends Controller
 	 
 	  $data = array( 'shop' => $shop,  'setting' => $setting, 'seller_services' => $seller_services, 'subservice' => $subservice,
 	  'booking_per_hour' => $booking_per_hour, 'start_time' => $start_time, 'end_time' => $end_time, 'shop_id' => $shop_id, 'userid' => $userid,
-	  'days' => $days, 'exp_date' => $exp_date);
+	  'days' => $days,'monthsDays' => $monthsDays, 'exp_date' => $exp_date);
       return view('booking')->with($data);
    }
    
@@ -118,7 +130,15 @@ class BookingController extends Controller
 		$shop_id=$data['shop_id'];
 		$services_id=$data['services_id'];
 		$booking_date=date("Y-m-d",strtotime($data['datepicker']));
-		$time=$data['time'];
+		if(array_key_exists("time",$data))
+		{
+			$time = $data['time'];
+		}
+		else
+		{
+			$data["time"] = 13;
+			$time = $data['time'];
+		}
 		$payment_mode=$data['payment_mode'];
 		
 		$book_address=$data['book_address'];
@@ -196,8 +216,8 @@ class BookingController extends Controller
 		$usercount = DB::table('users')
 	                 ->where('email', '=', $email)
 					 ->count(); 
-		if(	$count < $booking_per_hour )
-		{
+		//if(	$count < $booking_per_hour )
+		//{
 			
 			
 			
@@ -221,18 +241,28 @@ class BookingController extends Controller
 			}
 			
 			
-		   	if($count_two==0)
+
+			if($count==0)
 			{
 				DB::insert('insert into booking (token,services_id,booking_date,booking_time,user_email,booking_address,booking_city,booking_pincode,booking_note,user_id,payment_mode,status,shop_id,currency,curr_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$token,
 				$viewservicee,$booking_date,$time,$email,$book_address,$book_city,$book_pincode,$booknote,$usernewids,$payment_mode,$status,$shop_id,$currency,$cur_date]);
 			}
-			else
-			{
-				DB::update('update booking set services_id="'.$viewservicee.'",booking_date="'.$booking_date.'",booking_time="'.$time.'",booking_address="'.$book_address.'",
-				booking_city="'.$book_city.'",booking_pincode="'.$book_pincode.'",booking_note="'.$booknote.'",payment_mode="'.$payment_mode.'",user_id="'.$usernewids.'",shop_id="'.$shop_id.'",currency="'.$currency.'",curr_date="'.$cur_date.'" where user_email ="'.$email.'" and status="pending" and token="'.$token.'"');
 			
-			
-			}
+
+
+
+		   	// all commented code of this block is old project code if($count_two==0)
+			//{
+			//	DB::insert('insert into booking (token,services_id,booking_date,booking_time,user_email,booking_address,booking_city,booking_pincode,booking_note,user_id,payment_mode,status,shop_id,currency,curr_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$token,
+			//	$viewservicee,$booking_date,$time,$email,$book_address,$book_city,$book_pincode,$booknote,$usernewids,$payment_mode,$status,$shop_id,$currency,$cur_date]);
+			//}
+			//else
+			//{
+			//	DB::update('update booking set services_id="'.$viewservicee.'",booking_date="'.$booking_date.'",booking_time="'.$time.'",booking_address="'.$book_address.'",
+			//	booking_city="'.$book_city.'",booking_pincode="'.$book_pincode.'",booking_note="'.$booknote.'",payment_mode="'.$payment_mode.'",user_id="'.$usernewids.'",shop_id="'.$shop_id.'",currency="'.$currency.'",curr_date="'.$cur_date.'" where user_email ="'.$email.'" and status="pending" and token="'.$token.'"');
+			//
+			//
+			//}
 			
 			
 			
@@ -308,12 +338,12 @@ class BookingController extends Controller
 			
 			 
 			
-		}
-		else
-		{
+		//}
+		//else
+		//{
 			/*return back()->with('error', 'That time already booked.Please select another time');*/
-			return redirect()->back()->with('message', 'That time already booked.Please select another time');
-		}
+		//	return redirect()->back()->with('message', 'That time already booked.Please select another time');
+		//}
 				 
 		
 		
