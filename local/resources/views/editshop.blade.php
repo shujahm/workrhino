@@ -25,7 +25,7 @@
 	<div class="video">
 
 	<div class="container">
-	 <h1>Shop</h1>
+	 <h1 style="margin-top:80px">Shop</h1>
 	 
 	 <?php if($requestid!=""){?>
 	 
@@ -151,7 +151,7 @@
         </div>
 
 		<div class="form-group">
-                            <label for="name" class="col-md-12">Allowed Bookings Per Hour <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Allowed Bookings Per Day <span class="require">*</span></label>
 
                             <div class="col-md-12">
                                 <input id="shop_booking_hour" type="number" class="form-control input-lg validate[required] text-input" name="shop_booking_hour" value="<?php echo $editshop[0]->booking_per_hour;?>">
