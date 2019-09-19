@@ -109,7 +109,7 @@ foreach($seller_services as $viewservices)
 
 
 <input type="hidden" id="shop_id" name="shop_id" value="<?php echo $shop_id; ?>">
-
+  
 
 
 <input type="hidden" id="services_id" name="services_id" value="<?php echo $subservice[0]->subid; ?>">
@@ -117,6 +117,8 @@ foreach($seller_services as $viewservices)
 
 <h5><strong>Select Date <span class="require">*</span></strong></h5>
 <script type="text/javascript">
+
+
   $(function() {
 
  $('#datepicker').datepicker({
@@ -125,17 +127,34 @@ changeMonth: true,
 changeYear: true,
 minDate: 0,
 beforeShowDay: function (date) {
-     var day = date.getDay();
-	return [(<?php echo $days; ?>)];
-    }
+        var day = date.getDay();
+	var month = date.getMonth();
+	var dateDay = date.getDate();
 	
+
+	if(<?php echo $monthsDays; ?>)
+	{
+		return [false];
+	}
+	
+	else 
+	{	
+		return [(<?php echo $days; ?>)];
+	}
+    
+
+	}
 });
+    
+
+	
 
 var date = new Date('<?php echo $exp_date; ?>');
 
 var currentMonth = date.getMonth();
 var currentDate = date.getDate();
 var currentYear = date.getFullYear();
+
 $("#datepicker").datepicker( "option", "maxDate", new Date(currentYear, currentMonth, currentDate));
 });   
 
@@ -154,9 +173,9 @@ $("#datepicker").datepicker( "option", "maxDate", new Date(currentYear, currentM
 
 <div class="col-md-4">
 
-<h5><strong>Select Time <span class="require">*</span></strong></h5>
+<h5><strong>Select Time <span class=""></span></strong></h5>
 
-<select id="time" name="time" class="form-control time validate[required]">
+<select id="time" name="time" class="form-control time" disabled>
 
 <option value="">None</option>
 <?php 
