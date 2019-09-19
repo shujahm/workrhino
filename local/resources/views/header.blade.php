@@ -50,7 +50,7 @@ if(Auth::check())
 			
             <li><a href="<?php echo $url;?>/register"><div style="color:#000000;">Sign Up</div></a></li>
             <li><a href="<?php echo $url;?>/login"><div style="color:#000000;">Login</div></a></li>
-			<li><a href="<?php echo $url;?>/new-request"  class="borbtn">Post a Job</a></li>
+			<li style="display:none"><a href="<?php echo $url;?>/new-request"  class="borbtn">Post a Job</a></li>
             <?php } else { ?>
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> {{ Auth::user()->name }} <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -71,14 +71,15 @@ if(Auth::check())
 				<?php } ?>
 								
 				<?php if(Auth::user()->admin==0) {?>
+				<li><a href="<?php echo $url;?>/index">Home</a></li>
 				<li><a href="<?php echo $url;?>/dashboard">My Profile</a></li>
 				
 				<li><a href="<?php echo $url;?>/my_bookings">My Bookings</a></li>
 				
 				<li class="dropdown-submenu">
-                <a tabindex="-1" href="#">My Jobs</a>
+                <a style="display:none" tabindex="-1" href="#">My Jobs</a>
                 <ul class="dropdown-menu ">
-                  <li><a href="<?php echo $url;?>/my_request">My Posted Jobs</a></li>
+                  <li style="display:none"><a href="<?php echo $url;?>/my_request">My Posted Jobs</a></li>
                  
                   <li><a href="<?php echo $url;?>/my_client_request">My Running Jobs (as Client)</a></li>
 				  <li><a href="<?php echo $url;?>/my_freelancer_request">My Running Jobs (as Freelancer)</a></li>
@@ -88,7 +89,7 @@ if(Auth::check())
               </li>
 				
 				<li><a href="<?php echo $url;?>/messages">My Messages <?php if(!empty($view_unread)){?><span class="countes"><?php echo $view_unread;?></span><?php } ?></a></li>
-				<li><a href="<?php echo $url;?>/wallet">Wallet</a></li>
+				<li style="display:none"><a href="<?php echo $url;?>/wallet">Wallet</a></li>
 				<?php } ?>			
 								
 								
@@ -98,14 +99,19 @@ if(Auth::check())
     	 $shcount = DB::table('shop')
 		 ->where('seller_email', '=',$sellmail)
 		 ->count();
+
+	$shstatus = DB::table('shop')
+		 ->where('seller_email', '=',$sellmail)
+		 ->get();
 					?>
 				<li><a href="<?php echo $url;?>/dashboard">My Profile</a></li>
-				<li><a href="<?php echo $url;?>/my_bookings">My Bookings</a></li>
+				<?php if(empty($shcount)){?><li><a href="<?php echo $url;?>/addshop">Rhino Registration</a></li><?php } ?>
+				<li style="display:none"><a href="<?php echo $url;?>/my_bookings">My Bookings</a></li>
 				<li><a href="<?php echo $url;?>/messages">My Messages <?php if(!empty($view_unread)){?><span class="countes"><?php echo $view_unread;?></span><?php } ?></a></li>
 				<li><a href="<?php echo $url;?>/myorder"> My Order</a></li>
 				
 				
-				 <li class="dropdown-submenu">
+				 <li style="display:none"class="dropdown-submenu">
                 <a tabindex="-1" href="#" class="test">My Jobs</a>
                 <ul class="dropdown-menu sv_sub_menu">
                   <li><a href="<?php echo $url;?>/my_request">My Posted Jobs</a></li>
@@ -119,9 +125,9 @@ if(Auth::check())
 				
 				
 				<li><a href="<?php if(empty($shcount)){?><?php echo $url;?>/addshop<?php } else { ?><?php echo $url;?>/shop<?php } ?>">My Shop</a></li>
-				<li <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/services" <?php if(empty($shcount)){?>class="disabled"<?php } ?>>My Services</a></li>
-				<li <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/gallery" <?php if(empty($shcount)){?>class="disabled"<?php } ?>>Shop Gallery</a></li>
-				<li <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/wallet" <?php if(empty($shcount)){?>class="disabled"<?php } ?>>Wallet</a></li>
+				<li style="display:none"<?php if(empty($shcount)||$shstatus[0]->status=="unapproved"){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/services" <?php if(empty($shcount)||$shstatus[0]->status=="unapproved"){?>class="disabled"<?php } ?>>My Services</a></li>
+				<li <?php if(empty($shcount)||$shstatus[0]->status=="unapproved"){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/gallery" <?php if(empty($shcount)||$shstatus[0]->status=="unapproved"){?>class="disabled"<?php } ?>>Shop Gallery</a></li>
+				<li style="display:none" <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/wallet" <?php if(empty($shcount)){?>class="disabled"<?php } ?>>Wallet</a></li>
 				
 				<?php } ?>			
 								
@@ -138,7 +144,7 @@ if(Auth::check())
                                         </form>
               </ul>
             </li>
-			<li><a href="<?php echo $url;?>/new-request"  class="borbtn">Post a Job</a></li>
+			<li style="display:none"><a href="<?php echo $url;?>/new-request"  class="borbtn">Post a Job</a></li>
 			<?php } ?>
           </ul>
         </div> <!-- /.nav-collapse -->
@@ -161,7 +167,7 @@ $(document).ready(function(){
 <header class="sv_mob_menu">
 <div id="mySidenav" class="sidenav ">
     <div class="header_part">
-    <span class="sv_menu_title">Tasky</span>
+    <span class="sv_menu_title">Workrhino</span>
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   </div>
   
@@ -169,7 +175,7 @@ $(document).ready(function(){
 			
            <a href="<?php echo $url;?>/register"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Sign Up</a>
            <a href="<?php echo $url;?>/login"><i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a>
-		    <a href="<?php echo $url;?>/new-request"  class="borbtn"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Post a Job</a>
+		    <a style="display:none" href="<?php echo $url;?>/new-request"  class="borbtn"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Post a Job</a>
             <?php } else {  ?>
             
            
@@ -195,17 +201,17 @@ $(document).ready(function(){
 			
               
                
-                  <li><a href="<?php echo $url;?>/my_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> My Posted Jobs</a></li>
+                  <li style="display:none"><a href="<?php echo $url;?>/my_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> My Posted Jobs</a></li>
                  
-                  <li><a href="<?php echo $url;?>/my_client_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Running Jobs (as Client)</a></li>
+                  <li style="display:none"><a href="<?php echo $url;?>/my_client_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Running Jobs (as Client)</a></li>
 				  <li><a href="<?php echo $url;?>/my_freelancer_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Running Jobs (as Freelancer)</a></li>
-                  <li><a href="<?php echo $url;?>/my_applied_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Applied Jobs</a></li>
-				  <li><a href="<?php echo $url;?>/buyer_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  All Jobs</a></li>
+                  <li style="display:none"><a href="<?php echo $url;?>/my_applied_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Applied Jobs</a></li>
+				  <li style="display:none"><a href="<?php echo $url;?>/buyer_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  All Jobs</a></li>
               
              
 				
 				<li><a href="<?php echo $url;?>/messages"><i class="fa fa-commenting-o" aria-hidden="true"></i> My Messages <?php if(!empty($view_unread)){?><span class="countes"><?php echo $view_unread;?></span><?php } ?></a></li>
-				<li><a href="<?php echo $url;?>/wallet"><i class="fa fa-money" aria-hidden="true"></i> Wallet</a></li>
+				<li style="display:none"><a href="<?php echo $url;?>/wallet"><i class="fa fa-money" aria-hidden="true"></i> Wallet</a></li>
 				<?php } ?>			
 								
 								
@@ -215,14 +221,20 @@ $(document).ready(function(){
     	 $shcount = DB::table('shop')
 		 ->where('seller_email', '=',$sellmail)
 		 ->count();
+
+	$shopstatus = DB::table('shop')
+		->where('seller_email', '=',$sellmail)
+		->get();
+
 					?>
 				<li><a href="<?php echo $url;?>/dashboard"><i class="fa fa-user-o" aria-hidden="true"></i> My Profile</a></li>
-				<li><a href="<?php echo $url;?>/my_bookings"><i class="fa fa-check" aria-hidden="true"></i>  My Bookings</a></li>
+				<?php if(empty($shcount)){?><li><a href="<?php echo $url;?>/addshop">Rhino Registration</a></li><?php } ?>
+				<li style="display:none"><a href="<?php echo $url;?>/my_bookings"><i class="fa fa-check" aria-hidden="true"></i>  My Bookings</a></li>
 				<li><a href="<?php echo $url;?>/messages"><i class="fa fa-commenting-o" aria-hidden="true"></i>  My Messages <?php if(!empty($view_unread)){?><span class="countes"><?php echo $view_unread;?></span><?php } ?></a></li>
 				<li><a href="<?php echo $url;?>/myorder"><i class="fa fa-first-order" aria-hidden="true"></i> My Order</a></li>
 				
 				
-				<li class="dropdown">
+				<li class="dropdown" style="display:none">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-search-minus" aria-hidden="true"></i> My Jobs <i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
                    <li><a href="<?php echo $url;?>/my_request">My Posted Jobs</a></li>
@@ -237,9 +249,9 @@ $(document).ready(function(){
 				
 				
 				<li><a href="<?php if(empty($shcount)){?><?php echo $url;?>/addshop<?php } else { ?><?php echo $url;?>/shop<?php } ?>"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> My Shop</a></li>
-				<li <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/services" <?php if(empty($shcount)){?>class="disabled"<?php } ?>><i class="fa fa-cogs" aria-hidden="true"></i> My Services</a></li>
+				<li style="display:none" <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/services" <?php if(!empty($shcount)){?>class="disabled"<?php } ?>><i class="fa fa-cogs" aria-hidden="true"></i> My Services</a></li>
 				<li <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/gallery" <?php if(empty($shcount)){?>class="disabled"<?php } ?>><i class="fa fa-picture-o" aria-hidden="true"></i> Shop Gallery</a></li>
-				<li <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/wallet" <?php if(empty($shcount)){?>class="disabled"<?php } ?>><i class="fa fa-money" aria-hidden="true"></i> Wallet</a></li>
+				<li style="display:none" <?php if(empty($shcount)){?>class="disabled"<?php } ?>><a href="<?php echo $url;?>/wallet" <?php if(empty($shcount)){?>class="disabled"<?php } ?>><i class="fa fa-money" aria-hidden="true"></i> Wallet</a></li>
 				
 				<?php } ?>			
 								
