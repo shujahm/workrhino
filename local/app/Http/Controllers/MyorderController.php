@@ -44,6 +44,22 @@ class MyorderController extends Controller
 		
 		
 	}
+
+	public function sangvish_payment_status($service,$id,$status)
+	{
+		$vendor_id = Auth::user()->id;
+		
+		$book_id = base64_decode($id);
+		
+		DB::update('update booking set status="'.$status.'", service_complete="2" where book_id = ?', [$book_id]);
+		
+		
+		
+		return back();
+		
+		
+		
+	}
 	
 	
 	public function sangvish_reject($reject,$id)
@@ -57,16 +73,16 @@ class MyorderController extends Controller
 					 ->where('book_id', '=', $book_id)
 					 ->get();
 		
-		$refund_amt = $view_list[0]->subtotal_amt + $view_list[0]->tax_amt;
-		$credit_amt = $view_list[0]->total_amt;
+		//$refund_amt = $view_list[0]->subtotal_amt + $view_list[0]->tax_amt;
+		//$credit_amt = $view_list[0]->total_amt;
 		
 		$check_vendor = DB::table('users')
 					   ->where('id', '=', $vendor_id)
 					   ->get();
 		
-        $vendor_final_amount = $check_vendor[0]->wallet - $refund_amt;
+        //$vendor_final_amount = $check_vendor[0]->wallet - $refund_amt;
 
-        DB::update('update users set wallet="'.$vendor_final_amount.'" where id = ?', [$vendor_id]);		
+        //DB::update('update users set wallet="'.$vendor_final_amount.'" where id = ?', [$vendor_id]);		
 		
 		
 		
@@ -76,13 +92,14 @@ class MyorderController extends Controller
 					      ->where('id', '=', $customer_id)
 					      ->get();
 		
-        $customer_final_amount = $check_customer[0]->wallet + $credit_amt;
+        //$customer_final_amount = $check_customer[0]->wallet + $credit_amt;
         
-        DB::update('update users set wallet="'.$customer_final_amount.'" where id = ?', [$customer_id]);		
+        //DB::update('update users set wallet="'.$customer_final_amount.'" where id = ?', [$customer_id]);		
 		
 		
 		
-		DB::update('update booking set status="refund",reject="cancelled by vendor" where book_id = ?', [$book_id]);
+		//DB::update('update booking set status="refund",reject="cancelled by vendor" where book_id = ?', [$book_id]);
+		DB::update('update booking set status="cancelled",reject="cancelled by vendor" where book_id = ?', [$book_id]);
 		
 		
 		
@@ -110,7 +127,7 @@ class MyorderController extends Controller
 				   ->where('shop.status', '=', 'approved')
 				   
 				   ->where('shop.seller_email', '=', $email)
-				   ->whereIn('booking.status', ['paid','refund'])
+				   ->whereIn('booking.status', ['paid','refund','pending','cancelled'])
 				   ->orderBy('booking.book_id', 'desc')
 				 ->get();
 				
@@ -119,7 +136,7 @@ class MyorderController extends Controller
 		           ->leftJoin('shop', 'shop.id', '=', 'booking.shop_id')
 				   ->where('shop.status', '=', 'approved')
 				   ->where('shop.seller_email', '=', $email)
-				   ->whereIn('booking.status', ['paid','refund'])
+				   ->whereIn('booking.status', ['paid','refund','pending','cancelled'])
 				   ->orderBy('booking.book_id', 'desc')
 				 ->count(); 
 				 
