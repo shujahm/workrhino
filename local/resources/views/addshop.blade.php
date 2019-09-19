@@ -41,7 +41,7 @@
 	<div class="video">
 	<div class="clearfix sv_mob_clearfix"></div>
 	<div class="container">
-	 <h1>Shop</h1>
+	 <h1>Rhino Registration</h1>
 	 
 	 
 	
@@ -56,7 +56,7 @@
 	 
 	 
 	 
-	 <?php if($shopcount==0){?>
+	 <?php if($shopcount==0 && ($admin_type==1 || $admin_type==2) ){?>
 	 
 	 
 	 @if(Session::has('success'))
@@ -119,12 +119,13 @@
                                 
                             </div>
         </div>
+
 		
 		<div class="webheight"></div>
 		
 		
 		
-		<div class="form-group">
+		<!--<div class="form-group">
                             <label for="name" class="col-md-12">Shop Start Time <span class="require">*</span></label>
 
                             <div class="col-md-12">
@@ -139,9 +140,9 @@
 
                                 
                      </div>
-        </div>
+        </div>-->
 		
-		
+		<input type="hidden" name="shop_start_time" value="9">
 		
 		
 		<div class="form-group">
@@ -165,7 +166,7 @@
 		
 		
 		
-		<div class="form-group">
+		<!--<div class="form-group">
                             <label for="name" class="col-md-12">Advance Booking upto <span class="require">*</span></label>
 
                             <div class="col-md-12">
@@ -179,16 +180,21 @@
 
                                 
                             </div>
-        </div>
+        </div>-->
+
+
+        <input type="hidden" name="shop_booking_upto" value="30">
+
+        
 		
 		
 		
 		
 		<div class="form-group">
-                            <label for="name" class="col-md-12">Allowed Bookings Per Hour <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Allowed Bookings Per 8 Hours <span class="require">*</span></label>
 
                             <div class="col-md-12">
-                                <input id="shop_booking_hour" type="number" class="form-control validate[required] text-input" name="shop_booking_hour" value="">
+                                <input id="shop_booking_hour" type="number" class="form-control validate[required] text-input" name="shop_booking_hour" value="" placeholder="amount in rupees">
 
                                 
                             </div>
@@ -197,7 +203,7 @@
 		
 		
 		
-		<div class="form-group">
+		<!--<div class="form-group">
                             <label for="name" class="col-md-12">Tax (%) <span class="require">*</span></label>
 
                             <div class="col-md-12">
@@ -205,11 +211,122 @@
 
                                 
                             </div>
+        </div>-->
+
+
+        <input type="hidden" name="tax_percent" value="16">
+
+
+
+		<div class="form-group">
+                            <label for="name" class="col-md-12">CNIC <span class="require">*</span></label>
+
+                     <div class="col-md-12">
+                     <input id="cnic" type="text" class="form-control validate[required, custom[cnicValidate]] text-input" name="cnic" value="" autofocus placeholder="enter a valid cnic number with dashes">
+
+                                
+                            </div>
         </div>
-		
+
+
+
+        <div class="form-group">
+            <label for="name" class="col-md-12">Gender <span class="require">*</span></label>
+
+            <div class="col-md-12">
+                <select id="gender" name="gender" class="form-control validate[required]">
+                    <option value="">None</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="name" class="col-md-12">Date of registration <span class="require">*</span></label>
+            <script type="text/javascript">
+
+                $(function() {
+              
+               $('#date_of_registration').datepicker({
+              
+              changeMonth: true,
+              changeYear: true,
+              minDate: 0,
+            dateFormat: 'yy/mm/dd',
+
+
+              });
+     
+              $("#datepicker").datepicker( "option", "maxDate", );
+              });   
+              
+               </script>
+            <div class="col-md-12">
+            <input id="date_of_registration" type="text" class="form-control validate[required, custom[date]] text-input" name="date_of_registration" value="" autofocus placeholder="yy-mm-dd">
+
+                
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="name" class="col-md-12">Are you a Rhino or Contractor<span class="require"> *</span></label>
+
+            <div class="col-md-12">
+                <select id="shop_type_id" name="shop_type_id" class="form-control validate[required]">
+                    <option value="">None</option>
+                    <option value="1">Rhino</option>
+                    <option value="2">Contractor</option>
+                </select>
+                
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label for="name" class="col-md-12">Number of Rhinos in team</label>
+
+            <div class="col-md-12">
+                <input id="number_of_rhinos_in_team" type="text" class="form-control text-input" name="number_of_rhinos_in_team" value="" autofocus placeholder="this field only for contractor otherwise leave it empty">
+
+                
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+                            <label for="name" class="col-md-12">Your Profession <span class="require">*</span></label>
+
+                            <div class="col-md-12">
+                               <select id="profession" name="profession" class="form-control validate[required] text-input">
+								<option value="">None</option>
+								<?php foreach($professions as $profession) {?>
+                                    <option value="<?php echo $profession->subid;?>"><?php echo $profession->subname;?></option>
+                                    <?php } ?>
+    
+                                </select>
+    
+                                    
+                                </div>
+            </div>
+
+
+
+        
 		
 			
 		</div>
+
+
+
+
 		
 		
 		
@@ -263,7 +380,7 @@
                         
 				
 
-                <div class="form-group">
+                <!--<div class="form-group">
                             <label for="name" class="col-md-12">Shop End Time <span class="require">*</span></label>
 
                             <div class="col-md-12">
@@ -278,8 +395,10 @@
 
                                 
                      </div>
-               </div>				
-						
+               </div>-->				
+                        
+               
+               <input type="hidden" name="shop_end_time" value="9">
 						
 						
 						
@@ -313,7 +432,7 @@
                             <div class="col-md-12">
 							<?php foreach($daytxt as $daytxtkey => $daytxtvalue){?>
 							
-                                 <input type="checkbox" id="shop_working_days" name="shop_working_days[]" class="validate[required]" value="<?php echo $daytxtvalue;?>"> <?php echo $daytxtkey;?><br/>
+                                 <input type="checkbox" id="shop_working_days" name="shop_working_days[]" class="validate[required]" value="<?php echo $daytxtvalue;?>" checked onclick="return false"> <?php echo $daytxtkey;?><br/>
 							<?php } ?>
                                 
                             </div>
@@ -361,14 +480,62 @@
 							
 							
 							
-                      </div>
+                </div>
 			   
 			   
-			   
+                <div class="form-group">
+                    <label for="name" class="col-md-12">Associated with contractor <span class="require">*</span></label>
+        
+                    <div class="col-md-12">
+                        <select id="associated_with_contractor" name="associated_with_contractor" class="form-control validate[required]">
+                            <option value="">None</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Self">Self</option>
+                        </select>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="name" class="col-md-12">If you are associated with contractor then provide the Name of firm</label>
+
+                    <div class="col-md-12">
+                        <input id="name_of_firm" type="text" class="form-control text-input" name="name_of_firm" value="" autofocus placeholder="enter a contractor's firm name">
+
+                        
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="name" class="col-md-12">Name of owner or Contractor</label>
+
+                    <div class="col-md-12">
+                        <input id="name_of_owner_or_contractor" type="text" class="form-control text-input" name="name_of_owner_or_contractor" value="" autofocus placeholder="this field only for contractor otherwise leave it empty">
+
+                        
+                    </div>
+                </div>
+
+
+
+                
+
+
+
+                
+
+                      
 			   
 			   
            
-		</div>
+        </div>
+        
 		
 		
 	
@@ -386,7 +553,7 @@
 								<span class="disabletxt">( <?php echo config('global.demotxt');?> )</span><?php } else { ?>
 								
                                 <button type="submit" class="btn btn-success radiusoff">
-                                    Add
+                                    Register
                                 </button>
 								
 								<?php } ?>
@@ -396,12 +563,14 @@
 	
 	
 
-	 </form>
+     </form>
+     <script src="<?php echo $url;?>/js/myJavaScript.js" type="text/javascript" charset="utf-8"></script>
 	 
 	 
-	 <?php } ?>
-	 
-	 
+	 <?php }else{ ?>
+	 	
+	 <center style="color:red; font-size:20px">You cannot add Rhino</center>
+<?php } ?>
 	 
 	 
 	 
