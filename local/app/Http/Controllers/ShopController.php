@@ -55,6 +55,23 @@ class ShopController extends Controller
 
     }
 
+    public function sangvish_successfull()
+    {
+        $userId = Auth::user()->id;
+        $shopCount = DB::table('shop')
+        ->where('user_id', '=', $userId)
+        ->count();
+
+        if($shopCount != 0)
+        
+            return view('registered_successfully');
+        
+        else 
+        {
+            return back();
+        }
+    }
+
     public function favorites($user_id, $shop_id)
     {
 
@@ -165,6 +182,15 @@ class ShopController extends Controller
             ->where('seller_email', '=', $sellermail)
             ->get();
 
+	$professions = DB::table('subservices')
+		->orderBy('subname','asc')
+		->get(); 
+
+
+	$admin_type = Auth::user()->admin;
+	$user_type = DB::table('users')
+		->where('admin', '=', $admin_type);
+
         $admin_idd = 1;
 
         $admin_email_id = DB::table('users')
@@ -174,7 +200,7 @@ class ShopController extends Controller
         $siteid = 1;
         $site_setting = DB::select('select * from settings where id = ?', [$siteid]);
 
-        $data = array('time' => $time, 'days' => $days, 'daytxt' => $daytxt, 'shopcount' => $shopcount, 'shop' => $shop, 'admin_email_id' => $admin_email_id,
+        $data = array('time' => $time, 'days' => $days, 'daytxt' => $daytxt, 'professions' => $professions, 'admin_type' => $admin_type, 'shopcount' => $shopcount, 'shop' => $shop, 'admin_email_id' => $admin_email_id,
             'site_setting' => $site_setting);
         return view('addshop')->with($data);
     }
@@ -240,7 +266,7 @@ class ShopController extends Controller
 
             'shop_cover_photo' => 'max:1024|mimes:jpg,jpeg,png',
             'shop_profile_photo' => 'max:1024|mimes:jpg,jpeg,png',
-            'the-pdf' => 'max:2048|mimes:jpg,jpeg,png,pdf',
+            'the-pdf' => 'max:2048|mimes:jpg,jpeg,png,pdf',		
 
         );
 
@@ -410,6 +436,24 @@ class ShopController extends Controller
                 $workdays .= $working_days . ',';
             }
             $workingdays = rtrim($workdays, ",");
+		
+		$profession = $data['profession'];
+
+		$name_of_owner_or_contractor = $data['name_of_owner_or_contractor'];
+
+		$number_of_rhinos_in_team = $data['number_of_rhinos_in_team'];
+
+		$name_of_firm = $data['name_of_firm'];
+
+		$shop_type_id = $data['shop_type_id'];
+
+		$associated_with_contractor = $data['associated_with_contractor'];
+
+		$date_of_registration = $data['date_of_registration'];
+
+		$gender = $data['gender'];
+
+		$cnic = $data['cnic'];
 
             $sellermail = Auth::user()->email;
 
@@ -448,9 +492,21 @@ class ShopController extends Controller
                 if ($shopcnt == 0) {
 
                     DB::insert('insert into shop (shop_name,address,shop_phone_no,description,shop_date,start_time,end_time,cover_photo,
-		profile_photo,	shop_document,seller_email,user_id,featured,status,admin_email_status,booking_opening_days,booking_per_hour,tax_percent) values (?, ?, ? ,  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+		profile_photo,	shop_document,seller_email,user_id,featured,status,admin_email_status,booking_opening_days,booking_per_hour,tax_percent   ,profession,name_of_owner_or_contractor,number_of_rhinos_in_team,name_of_firm,shop_type_id,associated_with_contractor,date_of_registration,gender,cnic) values (?, ?, ? ,  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?    ,?,?,?,?,?,?,?,?,?)',
                         [$shop_name, $shop_address, $shop_phone_no, $shop_desc, $workingdays, $shop_start_time,
-                            $shop_end_time, $namef, $namepro, $nameff, $sellermail, $sellerid, $featured, $status, $admin_email_status, $shop_booking_upto, $shop_booking_hour, $tax_percent]);
+                            $shop_end_time, $namef, $namepro, $nameff, $sellermail, $sellerid, $featured, $status, $admin_email_status, $shop_booking_upto, $shop_booking_hour, $tax_percent    ,$profession,$name_of_owner_or_contractor,$number_of_rhinos_in_team,$name_of_firm,$shop_type_id,$associated_with_contractor,$date_of_registration,$gender,$cnic]);
+
+
+		//$shop_booking_hour;
+		$hours_time="8";
+		//$profession;
+		$servi_id=DB::table('subservices')->where('subid', $profession)->get();
+	   	$service_id = $servi_id[0]->service;
+		//$sellerid;
+		$shop_data=DB::table('shop')->where('user_id',$sellerid)->get();
+		$shop_id = $shop_data[0]->id;
+		
+		DB::insert('insert into seller_services (service_id,subservice_id,price,time,user_id,shop_id) values (?,?,?,?,?,?)' , [$service_id,$profession,$shop_booking_hour,$hours_time,$sellerid,$shop_id]);
 
                     Mail::send('shopuseremail', ['shop_name' => $shop_name, 'address' => $shop_address, 'shop_phone_no' => $shop_phone_no, 'description' => $shop_desc, 'booking_opening_days' => $shop_booking_upto,
                         'booking_per_hour' => $shop_booking_hour, 'stime' => $stime, 'etime' => $etime, 'site_logo' => $site_logo, 'site_name' => $site_name], function ($message) {
@@ -486,7 +542,7 @@ class ShopController extends Controller
 
             /* return back()->with('success', 'Shop has been created');*/
 
-            return redirect('shop');
+            return redirect('registered-successfully');
 
         }
 
