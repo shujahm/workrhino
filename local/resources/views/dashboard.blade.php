@@ -40,14 +40,14 @@
 					<div class="profile-usertitle-name">
 						<?php echo $editprofile[0]->name;?> 
 					</div>
-					<?php $sta=$editprofile[0]->admin; if($sta==1){ $viewst="Admin"; } else if($sta==2) { $viewst="Seller"; } else if($sta==0) { $viewst="Customer"; } else {$viewst="";}?>
+					<?php $sta=$editprofile[0]->admin; if($sta==1){ $viewst="Admin"; } else if($sta==2) { $viewst="RHINO"; } else if($sta==0) { $viewst="USER"; } else {$viewst="";}?>
 					<div class="profile-usertitle-job">
 						User Type : <?php echo $viewst;?>
 					</div>
 				</div>
 				
 				<div class="profile-userbuttons">
-					<a href="<?php echo $url;?>/my_bookings" class="borbtn btn-success btn-sm">My Bookings</a>
+					<a href="<?php echo $url;?>/myorder" class="borbtn btn-success btn-sm">My Orders</a>
 					<?php /* ?><a href="{{ route('logout') }}" class="btn btn-danger btn-sm">Sign Out</a><?php */?>
 					
 				</div>
@@ -73,7 +73,7 @@
 							</a> 
 						<?php } else { ?>
 						
-							<a href="<?php echo $url;?>/delete-account" onclick="return confirm('Are you sure you want to delete your account?');">
+							<a class="btndisable" href="<?php echo $url;?>/delete-account" onclick="return confirm('Are you sure you want to delete your account?');">
 							
 							<i class="fa fa-trash-o" aria-hidden="true"></i>
 							Delete Account
@@ -164,7 +164,7 @@
                             </div>
                         </div>
 																	
-						<div class="form-group">
+						<div class="form-group" style="display:none">
                             <div class="col-sm-6 col-sm-offset-3">
 							<select name="gender" class="form-control validate[required] text-input">							  
 							  <option value="">Gender</option>
@@ -173,7 +173,7 @@
 							</select>
                                
                             </div>
-                        </div>
+                        </div></br></br>
 																								
 						<div class="form-group">
                             <div class="col-sm-6 col-sm-offset-3">
