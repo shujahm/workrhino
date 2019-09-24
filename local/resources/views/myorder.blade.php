@@ -204,10 +204,11 @@ else
 
 
 
-                <td align="center"><?php if(empty($newbook[0]->reject)){?><?php if($viewbook->service_complete==0){?><a href="<?php echo $url;?>/myorder/service/<?php echo base64_encode($bookid);?>/1" class="btn btn-primary">Mark as complete</a><?php } ?><?php if($viewbook->service_complete==1){?>Completed<?php } ?>
-				<?php if($viewbook->service_complete==2){?>Released the payment<?php } ?><?php } else { echo '-'; } ?></td>
+				<td align="center"><?php if(empty($newbook[0]->reject)){?><?php if($viewbook->service_complete==0){?><a href="<?php echo $url;?>/myorder/service/<?php echo base64_encode($bookid);?>/1" class="btn btn-primary">Confirmed</a><?php } ?><?php if($viewbook->service_complete==1){?>Confirmed<?php } ?>
+					<?php if($viewbook->service_complete==1){?><a href="<?php echo $url;?>/myorder/service/<?php echo base64_encode($bookid);?>/2" class="btn btn-primary">Mark as complete</a><?php } ?><?php if($viewbook->service_complete==2){?>Completed<?php } ?>
+				<?php if($viewbook->service_complete==3){?>Released the payment<?php } ?><?php } else { echo '-'; } ?></td>
 		
-		<td align="center"><?php if(empty($newbook[0]->reject)){?><?php if($viewbook->service_complete==0){?>--<?php } ?>    <?php if($viewbook->service_complete==1){?><a href="<?php echo $url;?>/myorderPayment/service/<?php echo base64_encode($bookid);?>/paid" class="btn btn-primary">Mark as paid</a><?php } ?><?php } ?></td>
+		<td align="center"><?php if(empty($newbook[0]->reject)){?><?php if($viewbook->service_complete==0){?>--<?php } ?>    <?php if($viewbook->service_complete==2){?><a href="<?php echo $url;?>/myorderPayment/service/<?php echo base64_encode($bookid);?>/paid" class="btn btn-primary">Mark as paid</a><?php } ?><?php } ?></td>
 
 				
 			</tr>
