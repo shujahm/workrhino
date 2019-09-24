@@ -94,7 +94,7 @@
 		<div class="col-md-6">
 		
 		<div class="form-group">
-                            <label for="name" class="col-md-12">Shop Name <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Name <span class="require">*</span></label>
 
                      <div class="col-md-12">
                      <input id="shop_name" type="text" class="form-control validate[required] text-input" name="shop_name" value="" autofocus>
@@ -111,7 +111,7 @@
 		
 		
 		<div class="form-group">
-                            <label for="name" class="col-md-12">Shop Phone No <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Phone No <span class="require">*</span></label>
 
                             <div class="col-md-12">
                                 <input id="shop_phone_no" type="text" class="form-control validate[required] text-input" name="shop_phone_no" value="">
@@ -146,7 +146,7 @@
 		
 		
 		<div class="form-group">
-                            <label for="name" class="col-md-12">Shop Cover Photo</label>
+                            <label for="name" class="col-md-12">Cover Photo</label>
                             <div class="col-md-12 littlebit"><span class="require">[Please select an image 1400px / 300px]</span></div>
                             <div class="col-md-12">
                                  <input type="file" id="shop_cover_photo" name="shop_cover_photo" class="form-control validate[required]">
@@ -354,7 +354,7 @@
 			   
 			   
 			   <div class="form-group">
-                            <label for="name" class="col-md-12">Shop Address <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Address <span class="require">*</span></label>
 
                             <div class="col-md-12">
                                 <input id="txtPlaces" type="text" class="form-control validate[required] text-input" name="shop_address" value="">
@@ -369,7 +369,7 @@
 			  
 			  
 			  <div class="form-group">
-                            <label for="name" class="col-md-12">Shop Description <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Description <span class="require">*</span></label>
 
                             <div class="col-md-12">
                                 <textarea id="shop_desc" class="form-control validate[required] text-input" name="shop_desc"></textarea>
@@ -404,7 +404,7 @@
 						
 						
 						<div class="form-group">
-                            <label for="name" class="col-md-12">Shop Profile Photo</label>
+                            <label for="name" class="col-md-12">Profile Photo</label>
                                <div class="col-md-12 littlebit"><span class="require">[Please select an image 150px / 150px]</span></div>
                             <div class="col-md-12">
                                  <input type="file" id="shop_profile_photo" name="shop_profile_photo" class="form-control validate[required]">
@@ -427,7 +427,7 @@
 					  
 					  
 					  <div class="form-group">
-                            <label for="name" class="col-md-12">Shop Working Days <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Working Days <span class="require">*</span></label>
 
                             <div class="col-md-12">
 							<?php foreach($daytxt as $daytxtkey => $daytxtvalue){?>
@@ -460,7 +460,7 @@
                
 				
 				<div class="form-group">
-                            <label for="name" class="col-md-12">Shop registration document</label>
+                            <label for="name" class="col-md-12">Registration document</label>
                                <div class="col-md-12 littlebit"><span class="require">[Please upload pdf or image only]</span></div>
                             <div class="col-md-12">
 							
