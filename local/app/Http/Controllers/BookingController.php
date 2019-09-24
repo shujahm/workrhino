@@ -38,9 +38,9 @@ class BookingController extends Controller
                ->where('id', '=', $shop_id)
                 ->get();
 
-		$current_date = date("Y-m-d");
+		$status = "pending";
 		$booking = DB::table('booking')
-		->where('booking_date' , '>=' , $current_date)
+		->where('status' , '=' , $status)
 		->get();
 
 		 
