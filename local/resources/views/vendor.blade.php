@@ -209,11 +209,21 @@
 		<div class="col-md-6">
 			<h3>Description</h3>
 			<p><?php echo $shop[0]->description;?></p><br/>
+
+			
+			<h3>Conract No</h3>
+			<p><?php echo $shop[0]->shop_phone_no;?></p><br/>
+
+			<h3>Email Address</h3>
+			<p><?php echo $shop[0]->seller_email;?></p><br/>
+
+			<h3>CNIC</h3>
+			<p><?php echo $shop[0]->cnic;?></p><br/>
 		</div>	
 		<div class="col-md-6 contact_address">
-			<h3>Work Timings </h3>
+			<h3 style="display:none">Work Timings </h3>
 				
-								<p> <span class="lnr lnr-clock" style="color:#FFCC16"></span> <?php echo $stime;?> - <?php echo $etime;?></p> 
+								<p style="display:none"> <span class="lnr lnr-clock" style="color:#FFCC16"></span> <?php echo $stime;?> - <?php echo $etime;?></p> 
 			</div>
 				</div>
 				
