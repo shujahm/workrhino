@@ -51,7 +51,7 @@ class MyorderController extends Controller
 		
 		$book_id = base64_decode($id);
 		
-		DB::update('update booking set status="'.$status.'", service_complete="2" where book_id = ?', [$book_id]);
+		DB::update('update booking set status="'.$status.'", service_complete="3" where book_id = ?', [$book_id]);
 		
 		
 		
