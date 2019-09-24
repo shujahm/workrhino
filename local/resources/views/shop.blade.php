@@ -94,7 +94,7 @@
 				
 				<div class="col-md-12">
 				<div class="col-md-6 working_day">
-								<h3>Shop Working Days</h3>
+								<h3>Working Days</h3>
 					<p><?php for($i=0;$i<$lev;$i++){ if($sel[$i]=="0") echo "Sunday"; }?></p>
 					<p><?php for($i=0;$i<$lev;$i++){ if($sel[$i]=="1") echo "Monday"; }?></p>
 					<p><?php for($i=0;$i<$lev;$i++){ if($sel[$i]=="2") echo "Tuesday"; }?></p>
@@ -106,8 +106,17 @@
 				</div>
 			
 			<div class="col-md-6">
-				<h3>Shop Status </h3>
+				<h3>Rhino Status </h3>
 				<p><?php echo $shop[0]->status;?></p>
+
+				<h3>Phone Number</h3>
+				<p><?php echo $shop[0]->shop_phone_no;?></p>
+
+				<h3>Email Address</h3>
+				<p><?php echo $shop[0]->seller_email;?></p>
+
+				<h3>CNIC</h3>
+				<p><?php echo $shop[0]->cnic;?></p>
 			</div>
 			</div>
 
