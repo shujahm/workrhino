@@ -337,7 +337,7 @@ $(function(){
 				
 				<div>
 				<?php if(empty($view_list[0]->reject)){?>
-				<strong>Service Status :</strong> <?php if($book->service_complete==0){?>Awaiting completion<?php } ?> <?php if($book->service_complete==1){?>Completed<?php } ?> <?php if($book->service_complete==2){?>Released the payment<?php } ?>
+				<strong>Service Status :</strong> <?php if($book->service_complete==0){?>Booking not confirmed<?php } ?> <?php if($book->service_complete==1){?>Confirmed<?php } ?> <?php if($book->service_complete==2){?>Completed<?php } ?> <?php if($book->service_complete==3){?>Released the payment<?php } ?>
 				
 				<?php } ?>
 				</div>
