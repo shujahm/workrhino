@@ -217,7 +217,7 @@
 	
 	
 	 <?php }else{ ?>
-	 <h3>You are not approved by admin</h3>
+	 <h3 style="text-align:center">You are not approved by Administrator</h3></br></br>
 <?php } ?>		
 
 	</div>
