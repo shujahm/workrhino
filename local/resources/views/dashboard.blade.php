@@ -47,7 +47,8 @@
 				</div>
 				
 				<div class="profile-userbuttons">
-					<a href="<?php echo $url;?>/myorder" class="borbtn btn-success btn-sm">My Orders</a>
+					@if($sta==0)<a href="{{ $url }}/my_bookings" class="borbtn btn-success btn-sm">My bookings</a> @endif
+					@if($sta==2)<a href="<?php echo $url;?>/myorder" class="borbtn btn-success btn-sm">My Orders</a> @endif
 					<?php /* ?><a href="{{ route('logout') }}" class="btn btn-danger btn-sm">Sign Out</a><?php */?>
 					
 				</div>
