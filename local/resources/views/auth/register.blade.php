@@ -85,7 +85,7 @@ $setid=1;
 							<select name="usertype" class="form-control input-lg" required>
 							  
 							  <option value="">User Type</option>
-							   <option value="0">Customer</option>
+							   <option value="0">User</option>
 							   <option style="display:none" value="2">Rhino</option>
 							</select>                              
                         </div>
@@ -96,7 +96,7 @@ $setid=1;
                             </button>
                         </div>
                         
-                         Already have an account? <a class="btn-link" href="{{ route('login') }}">Sign in</a>
+                         <span style="color:#428bca">Already have an account?</span> <a class="btn-link" href="{{ route('login') }}">Sign in</a>
                     </form>
                 </div>
                 </div>
