@@ -195,6 +195,7 @@ $(document).ready(function(){
 				<?php } ?>
 								
 				<?php if(Auth::user()->admin==0) {?>
+				<li><a href="<?php echo $url;?>/index"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 				<li><a href="<?php echo $url;?>/dashboard"><i class="fa fa-user-o" aria-hidden="true"></i> My Profile</a></li>
 				
 				<li><a href="<?php echo $url;?>/my_bookings"><i class="fa fa-check" aria-hidden="true"></i> My Bookings</a></li>
@@ -205,7 +206,7 @@ $(document).ready(function(){
                   <li style="display:none"><a href="<?php echo $url;?>/my_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> My Posted Jobs</a></li>
                  
                   <li style="display:none"><a href="<?php echo $url;?>/my_client_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Running Jobs (as Client)</a></li>
-				  <li><a href="<?php echo $url;?>/my_freelancer_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Running Jobs (as Freelancer)</a></li>
+		<li style="display:none"><a href="<?php echo $url;?>/my_freelancer_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Running Jobs (as Freelancer)</a></li>
                   <li style="display:none"><a href="<?php echo $url;?>/my_applied_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  My Applied Jobs</a></li>
 				  <li style="display:none"><a href="<?php echo $url;?>/buyer_request"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>  All Jobs</a></li>
               
