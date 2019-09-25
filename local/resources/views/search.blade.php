@@ -78,7 +78,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	
 	<div class="col-sm-3 swidth nocity">	
 		
-		<input type="text"  name="city" id="txtPlaces" class="form-control input-lg"  value="<?php echo $city_name;?>">
+		<input type="text"  name="city" id="txtPlaces" class="form-control input-lg"  value="<?php echo $city_name;?>" disabled>
 	</div>	
 	
 	
