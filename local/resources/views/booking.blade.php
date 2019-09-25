@@ -331,8 +331,8 @@ for($i=$start_time;$i<=$end_time;$i++)
 <select name="usertype" class="form-control validate[required]">
 							  
 							  <option value=""></option>
-							   <option value="0">Customer</option>
-							   <option value="2">Seller</option>
+							   <option value="0">User</option>
+							   <option value="2" style="display:none">Seller</option>
 							</select>
 </div>
 <?php } ?>
