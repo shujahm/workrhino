@@ -3575,7 +3575,7 @@ html, body{
     margin: 30px auto;
 }
 .dropdown-menu>li>a {
-	color: #333;
+	color: black !important;
 	/* color: #51af33; */
 }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
