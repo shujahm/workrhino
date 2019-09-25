@@ -98,7 +98,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	
 	<div class="col-md-3 swidth nocity">	
 		
-		<input type="text"  name="city" id="txtPlaces" class="form-control" placeholder="Enter City" value="<?php echo $city_name; ?>">
+		<input type="text"  name="city" id="txtPlaces" class="form-control" placeholder="Enter City" value="<?php echo $city_name; ?>" disabled>
 	</div>	
 	
 	
@@ -674,7 +674,7 @@ function createMarker(results) {
 	
 	
 	
-	<div class="col-md-6">
+	<div class="col-md-6" style="display:none">
 	<?php 
 	$wel_count = count($shopview);
 	if(!empty($wel_count)){?>
