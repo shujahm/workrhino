@@ -87,7 +87,7 @@ $ery = 'Please confirm email verfication to login <a href="'.$url.'/index/'.$get
                         <div class="form-group">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <span style="color:#428bca">Remember Me</span>
                                     </label>
                                 </div>
                         </div>						
@@ -110,7 +110,7 @@ $ery = 'Please confirm email verfication to login <a href="'.$url.'/index/'.$get
                                 <a class="btn-link" href="{{ route('forgot') }}">
                                     Forgot Your Password?
                                 </a><br>
-                                Not Registered?  <a class="btn-link" href="{{ route('register') }}">Create an account</a>
+                                <span style="color:#428bca">Not Registered?</span>  <a class="btn-link" href="{{ route('register') }}">Create an account</a>
                         </div>
 						</div>
 						</div>
