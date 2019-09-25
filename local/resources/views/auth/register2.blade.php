@@ -96,7 +96,7 @@ $setid=1;
                             </button>
                         </div>
                         
-                         <span style="color:black">Already have an account?<span> <a class="btn-link" href="{{ route('login') }}">Sign in</a>
+                         <span style="color:#428bca">Already have an account?<span> <a class="btn-link" href="{{ route('login') }}">Sign in</a>
                     </form>
                 </div>
                 </div>
