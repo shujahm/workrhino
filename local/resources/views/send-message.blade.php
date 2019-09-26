@@ -37,7 +37,7 @@
 	
 	
 	<div class="video">
-	<div class="clearfix sv_mob_clearfix"></div>
+	<!--<div class="clearfix sv_mob_clearfix"></div>-->
 	<div class="headerbg">
 	 <div class="col-md-12" align="center"><h1>Send Message</h1></div>
 	 </div>
