@@ -1035,7 +1035,7 @@ ul.paddoff
 .ashbg > .clearfix
 {
 	height:0px;
-	background:#252B23;
+	background:black;
 }
 .icons li
 {
@@ -3717,7 +3717,7 @@ header .borbtn:hover, header  .borbtn {
 }
 .clearfix {
     height: 17px;
-	background:#252B23
+	background:black
 }
 }
 @media (max-width: 600px) {
