@@ -71,7 +71,9 @@ class BookinginfoController extends Controller
 			   ->where('user_id', '=', $idmy)
 			   ->orderBy('book_id','desc')
                 ->get();
-				
+
+
+		$selectedDays = count(explode("," , $booking[0]->booking_days_dates));
 				
 		$ser_id=$booking[0]->services_id;
 			$sel=explode("," , $ser_id);
@@ -205,7 +207,7 @@ class BookinginfoController extends Controller
 	   
 	   
 	   
-	   $data = array('booking' => $booking,'final_time' => $final_time, 'shop' => $shop, 'ser_name' => $ser_name, 'price' => $price,
+	   $data = array('booking' => $booking, 'selectedDays' => $selectedDays,'final_time' => $final_time, 'shop' => $shop, 'ser_name' => $ser_name, 'price' => $price,
 	   'commission_amt' => $commission_amt, 'commission_mode' => $commission_mode, 'currency' => $currency, 'sum' => $sum, 'adminemail' => $adminemail,
 	   'useremail' => $useremail, 'usernamer' => $usernamer, 'userphone' => $userphone, 'selleremail' => $selleremail, 'commission_from' => $commission_from,
 	   'admin_amt' => $admin_amt, 'get_tax' => $get_tax, 'taxer' => $taxer, 'tax_price' => $tax_price);
