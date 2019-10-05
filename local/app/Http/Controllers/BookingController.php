@@ -43,6 +43,38 @@ class BookingController extends Controller
 		->where('status' , '=' , $status)
 		->get();
 
+
+		$current_date = date("Y-m-d");
+		$two_month_back_date = date("Y-m-d", strtotime($current_date."-2 months")); 
+		$boocked_dates = DB::table('booking')
+		->select('booking_days_dates')
+		->where('shop_id', '=' , $shop_id)
+		->where('curr_date', '>=', $two_month_back_date)
+		->where('reject', '=' , " ")
+		->get();
+		$boocked_dates_string = "";
+		
+		$boocked_dates = $boocked_dates->toArray();
+		foreach($boocked_dates as $val)
+		{
+			if($val->booking_days_dates != "")
+			{
+				$oneArrDates = explode("," , $val->booking_days_dates);
+				foreach($oneArrDates as $oneDate)
+				{
+					//dd($oneDate);
+					$boocked_dates_string = $boocked_dates_string . '"' . $oneDate . '"' . ",";
+				
+				}
+				
+			}
+			
+			//dd($boocked_dates_string);
+			//foreach()
+			
+		}
+		$boocked_dates_string = trim($boocked_dates_string,",");
+		//dd($boocked_dates_string);
 		 
 		 
 		 $seller_services=DB::table('seller_services')
@@ -72,17 +104,17 @@ class BookingController extends Controller
 		}
 		$days=trim($days,"||");
 		
-		$monthsDays = "";
+		//$monthsDays = "";
 		
-		for($i=0; $i<$booking->count(); $i++)
-		{
-		$bookingdate = explode("-" , $booking[$i]->booking_date);	
-			$monthsDays.= "(month==".($bookingdate[1]-1)."&&dateDay==".$bookingdate[2].")||";
-		}
-		$monthsDays = trim($monthsDays, "||");
+		//for($i=0; $i<$booking->count(); $i++)
+		//{
+		//$bookingdate = explode("-" , $booking[$i]->booking_date);	
+		//	$monthsDays.= "(month==".($bookingdate[1]-1)."&&dateDay==".$bookingdate[2].")||";
+		//}
+		//$monthsDays = trim($monthsDays, "||");
 		
 		//dd($monthsDays);
-
+		$monthsDays = "";
 		
 				
 				
@@ -97,7 +129,7 @@ class BookingController extends Controller
 	 
 	  $data = array( 'shop' => $shop,  'setting' => $setting, 'seller_services' => $seller_services, 'subservice' => $subservice,
 	  'booking_per_hour' => $booking_per_hour, 'start_time' => $start_time, 'end_time' => $end_time, 'shop_id' => $shop_id, 'userid' => $userid,
-	  'days' => $days,'monthsDays' => $monthsDays, 'exp_date' => $exp_date);
+	  'days' => $days,'monthsDays' => $monthsDays,'boocked_dates_string' => $boocked_dates_string,'exp_date' => $exp_date);
       return view('booking')->with($data);
    }
    
@@ -129,7 +161,58 @@ class BookingController extends Controller
 		$end_time=$data['end_time'];
 		$shop_id=$data['shop_id'];
 		$services_id=$data['services_id'];
-		$booking_date=date("Y-m-d",strtotime($data['datepicker']));
+		//$booking_date=date("Y-m-d",strtotime($data['datepicker']));
+		$booking_date=$data['datepicker'];
+		
+		$daysDatesArray = explode("-" , $booking_date);
+		$startDate = date('d-m-Y', strtotime($daysDatesArray[0]));
+		$endDate = date('d-m-Y', strtotime($daysDatesArray[1]));
+		$next_date = date('d-m-Y', strtotime($startDate));
+		
+		$booking_days_dates_string = "";
+		if($startDate != $endDate)
+		{
+			while($next_date != $endDate)
+				{
+					$next_date = date('d-m-Y', strtotime($next_date. '+1 day'));
+					$booking_days_dates_string = $booking_days_dates_string . "," . $next_date;
+				}
+				$booking_days_dates_string = trim($booking_days_dates_string , ",");
+				$booking_days_dates_string = $startDate . ",". $booking_days_dates_string ;
+
+		}
+		else if($startDate == $endDate){
+			$booking_days_dates_string = strval($startDate);
+		}
+
+		$current_date = date("Y-m-d");
+		$two_month_back_date = date("Y-m-d", strtotime($current_date."-2 months")); 
+		$boocked_dates = DB::table('booking')
+		->select('booking_days_dates')
+		->where('shop_id', '=' , $shop_id)
+		->where('curr_date', '>=', $two_month_back_date)
+		->where('reject', '=' , " ")
+		->get();
+		$boocked_dates_string = "";
+		
+		$boocked_dates = $boocked_dates->toArray();
+		foreach($boocked_dates as $val)
+		{
+			$boocked_dates_string = $boocked_dates_string . $val->booking_days_dates ;
+		}
+		$myStr = explode("," , $booking_days_dates_string);
+		foreach($myStr as $key=>$val)
+		{
+			if (strpos($boocked_dates_string, $val) !== false) 
+			{
+			//echo 'true';
+			unset($myStr[$key]);
+			}
+		}
+		$booking_days_dates_string	= implode("," ,$myStr);
+		
+		 
+		
 		if(array_key_exists("time",$data))
 		{
 			$time = $data['time'];
@@ -242,11 +325,11 @@ class BookingController extends Controller
 			
 			
 
-			if($count==0)
-			{
-				DB::insert('insert into booking (token,services_id,booking_date,booking_time,user_email,booking_address,booking_city,booking_pincode,booking_note,user_id,payment_mode,status,shop_id,currency,curr_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$token,
-				$viewservicee,$booking_date,$time,$email,$book_address,$book_city,$book_pincode,$booknote,$usernewids,$payment_mode,$status,$shop_id,$currency,$cur_date]);
-			}
+			//if($count==0)
+			//{
+				DB::insert('insert into booking (token,services_id,booking_date,booking_days_dates,booking_time,user_email,booking_address,booking_city,booking_pincode,booking_note,user_id,payment_mode,status,shop_id,currency,curr_date) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$token,
+				$viewservicee,$booking_date,$booking_days_dates_string,$time,$email,$book_address,$book_city,$book_pincode,$booknote,$usernewids,$payment_mode,$status,$shop_id,$currency,$cur_date]);
+			//}
 			
 
 
