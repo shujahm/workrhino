@@ -42,7 +42,7 @@ $setid=1;
 	
     
 	
-	
+	<?php $bookingDateArr = explode("," , $booking_days_dates) ?>	
 	
 	
 	
@@ -78,7 +78,7 @@ $setid=1;
 	<div class="container text-center">
 	<div class="min-space"></div>
 	<label>Services Name </label> - <?php echo $service_names; ?><br>
-     <label>Booking Date</label> -  <?php echo $booking_date; ?><br>
+     <label>Booking Dates</label>:  @foreach($bookingDateArr as $val){{$val}},, @endforeach  <br>
     <label>Price</label> - <?php echo $prices; ?> <?php echo $currency; ?>
 	
 	
