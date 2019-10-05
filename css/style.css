@@ -1935,7 +1935,7 @@ footer .footerbar ul li a:hover
 /* Profile sidebar */
 .profile-sidebar {
   padding: 20px 0 10px 0;
-  background: #f8f8f8;
+  background: #000000;
   border:1px solid #eee;
   border-radius:5px;
 }
@@ -2032,7 +2032,7 @@ footer .footerbar ul li a:hover
 /* Profile Content */
 .profile-content {
   padding: 20px;
-  background: #f8f8f8;
+  background: #000000;
   min-height: auto;
   border:1px solid #eee;
   border-radius:5px;
@@ -3859,6 +3859,37 @@ p{
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* this style is used for overriding the dateRangePicker class for CDN links */
+
+.daterangepicker td.in-range{
+background-color: wheat !important;
+}
+
+
+.daterangepicker td.active{
+background-color: #357ebd !important;
+}
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+color: black;
+}
+.daterangepicker .drp-selected {
+color: black;
+}
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+  background-color: #357ebd !important;
+  border-color: transparent;
+  color: black;
+}
 
 
 
