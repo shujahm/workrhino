@@ -77,7 +77,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	$arrays =  explode(',', $selservice);
 	}
 	?>		
-				<select name="langOpt[]" multiple id="langOpt" class="validate[required]">
+				<select name="langOpt[]" multiple id="langOpt" class="validate[required]" disabled>
 				<?php 
 				
 				foreach($viewservices as $service){
@@ -103,7 +103,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	
 	
 	<div class="col-md-3 swidth nocity">
-	<select name="star_rate" class="form-control">
+	<select name="star_rate" class="form-control" disabled>
 	<option value="">Star Rating</option>
 	<option value="1" <?php if(!empty($star_rate)) { if($star_rate==1){?> selected <?php } } ?>>1 Star</option>
 	<option value="2" <?php if(!empty($star_rate)) { if($star_rate==2){?> selected <?php } } ?>>2 Stars</option>
@@ -117,7 +117,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	<div class="col-md-2 custobtn">
 		                       
 							   
-                                <button type="submit" class="btn btn-success btn-md">
+                                <button type="submit" class="btn btn-success btn-md" disabled>
                                     Filter
                                 </button>
                            
