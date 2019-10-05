@@ -494,8 +494,9 @@ $booking = DB::table('booking')
 		$service_name=str_replace("<br>",",",$datas['service_name']);
 		$service_names = rtrim($service_name,",");
 		$booking_date=$datas['booking_date'];
+		$booking_days_dates = $booking[0]->booking_days_dates;
 	 
-	  $data = array('prices' => $prices, 'currency' => $currency, 'service_names' => $service_names, 'booking_date' => $booking_date, 'paypal_id' => $paypal_id,
+	  $data = array('prices' => $prices, 'currency' => $currency, 'service_names' => $service_names, 'booking_date' => $booking_date, 'booking_days_dates' => $booking_days_dates ,'paypal_id' => $paypal_id,
 	  'paypal_url' => $paypal_url, 'booking_id' => $booking_id, 'payment_mode' => $payment_mode);
       return view('payment')->with($data);
    }
