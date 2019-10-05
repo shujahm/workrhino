@@ -233,7 +233,20 @@ $(function(){
 				<div class="col-lg-4 paddingleft20">
 				<h3 class="sv_shop_style"><a href="<?php echo $url; ?>/rhino/<?php echo $book->name;?>" target="_blank"><?php echo $book->shop_name; ?></a></h3>
 					
-					<p><span class="lnr lnr-calendar-full"></span>	<?php echo $book->booking_date; ?>  <span class="lnr lnr-clock" style="display:none"></span>
+					<p><span class="lnr lnr-calendar-full"></span>
+					<?php 
+					$bookDatesArray=explode(",",$book->booking_days_dates); 
+					$count=1; 
+					foreach($bookDatesArray as $val)
+					{
+					echo $val . "&nbsp&nbsp&nbsp" ;
+					if($count%2 == 0)
+						{
+						echo '<br>'.'&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
+						};
+					$count++;
+					}; 
+					?>  <span class="lnr lnr-clock" style="display:none"></span>
 						<?php //echo $final_time; ?></p>
 					
 					<?php if($book->payment_mode=="paypal"){ $txt_id = "Txn Id : ".$book->paypal_token; }
@@ -246,7 +259,7 @@ $(function(){
 					
 					<h5>Booking Id : <?php echo $book->book_id; ?> <br/><br/>
 					
-					Payment Method : <?php echo $book->payment_mode; ?> <br/><br/>
+					Payment Method : <?php echo $book->payment_mode; ?> <br/>
 					
 					 <?php echo $txt_id; ?></h5>
 					
