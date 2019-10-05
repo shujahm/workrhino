@@ -11,7 +11,7 @@
 
 
 </head>
-<body>
+<body style="background:#000000">
 
     
 
@@ -20,14 +20,15 @@
 
     <!-- slider -->
     
+	<?php $bookArr = explode("," , $booking[0]->booking_days_dates); ?>
 	
 	
 	<div class="headerbg">
-	 <div class="col-md-12" align="center"><h1>Booking Details</h1></div><br>
+	 <div class="col-md-12" align="center" style="margin-top:100px"><h1>Booking Details</h1></div><br>
 	 </div>
 	
 	<div class="container" style="background:black">
-	<div class="clearfix"></div>
+	<div class="clearfix" style="height:60px"></div>
 	
 	
 	
@@ -36,7 +37,11 @@
 		<h4><?php echo $shop[0]->shop_name;?></h4>
 		
 				
-			<p><i class="fa fa-calendar-o" aria-hidden="true"></i> Booking Date - <?php echo $booking[0]->booking_date; ?></p>
+			<p><i class="fa fa-calendar-o" aria-hidden="true"></i> Booking Dates (Day-Month-Year) :</br> @foreach($bookArr as $val) 
+			</br>{{$val}}
+			@endforeach 
+			</p>
+
 			<p style="display:none"> <i class="fa fa-clock-o" aria-hidden="true"></i>  Booking Time - <?php echo $final_time; ?></p>
 		
 	</div>
@@ -51,6 +56,7 @@
 					<th>Price (1 day)</th>
 					 <th>Trust Fee</th>
 					 <th>Services Tax</th>
+					<th>Selected Days</th>
                 </tr>
             </thead>
 			<tbody>			
@@ -64,6 +70,7 @@
 				</td>
 				
 				<td><?php echo $taxer.'%'; ?></td>
+				<td><?php echo $selectedDays ?></td>
 <?php //echo $tax_price;?>
 <?php //echo $get_tax;
 
@@ -72,7 +79,7 @@ $total_sum = $sum + $get_tax;
 
 ?>
 			</tr>
-			<td class="total-charge" colspan="1">TOTAL CHARGES</td><td class="total-charge"><?php echo $total_sum;?>&nbsp;<?php echo $currency;?></td>
+			<td class="total-charge" colspan="1">TOTAL CHARGES</td><td class="total-charge"><?php echo $total_sum;?>&nbsp;<?php echo $currency;?></td><td></td><td></td><td class="total-charge"><?php echo $total_sum * $selectedDays;?>&nbsp;<?php echo $currency;?>
 			</tbody>
 															
             </table>
@@ -92,13 +99,13 @@ $total_sum = $sum + $get_tax;
 <div class="col-md-8"></div>
 
 <div class="col-md-4">
-<input type="hidden" name="price" value="<?php echo $total_sum;?>">
+<input type="hidden" name="price" value="<?php echo $total_sum * $selectedDays;?>">
 
-<input type="hidden" name="admin_amt" value="<?php echo $admin_amt;?>">
+<input type="hidden" name="admin_amt" value="<?php echo $admin_amt * $selectedDays;?>">
 
-<input type="hidden" name="tax_amt" value="<?php echo $get_tax;?>">
+<input type="hidden" name="tax_amt" value="<?php echo $get_tax * $selectedDays;?>">
 
-<input type="hidden" name="service_amt" value="<?php echo $tax_price;?>">
+<input type="hidden" name="service_amt" value="<?php echo $tax_price * $selectedDays;?>">
 
 <input type="hidden" name="currency" value="<?php echo $currency;?>">
 
