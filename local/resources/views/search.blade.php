@@ -40,7 +40,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	
 	
 	<div class="video">
-	<div class="clearfix sv_mob_clearfix"></div>
+	<!--<div class="clearfix sv_mob_clearfix"></div>-->
 	<div class="headerbg">
 	 <div class="col-md-12" align="center"><h1>Search</h1></div>
 	 </div>
@@ -65,7 +65,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 		
 		?>
 			
-				<select name="langOpt[]" multiple id="langOpt" class="validate[required] input-lg">
+				<select name="langOpt[]" multiple id="langOpt" class="validate[required] input-lg" disabled>
 				<?php foreach($viewservices as $service){
 					$sel=explode(",",$service->subid);
 						$lev=count($sel);
@@ -79,13 +79,14 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	<div class="col-sm-3 swidth nocity">	
 		
 		<input type="text"  name="city" id="txtPlaces" class="form-control input-lg"  value="<?php echo $city_name;?>" disabled>
+		
 	</div>	
 	
 	
 
 	
 	<div class="col-sm-3 swidth nocity">
-	<select name="star_rate" class="form-control input-lg">
+	<select name="star_rate" class="form-control input-lg" disabled>
 	<option value="">Star Rating</option>
 	<option value="1">1 Star</option>
 	<option value="2">2 Stars</option>
@@ -100,7 +101,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 	<div class="col-sm-2 custobtn">
 		                       
 							   
-                                <button type="submit" class="borbtn-inverse filter-btn form-control btn-lg">
+                                <button type="submit" class="borbtn-inverse filter-btn form-control btn-lg" disabled>
                                     Filter
                                 </button>
 							
@@ -205,7 +206,7 @@ $country_name = $addrDetailsArr['geoplugin_countryName'];
 						$etime=$shop->end_time."AM";
 					}
 				?>
-	<h5><span style="color:#FFCC16" class="lnr lnr-clock"></span>&nbsp; <?php echo $stime ?> - <?php echo $etime; ?></h5>
+	<h5 style="display:none"><span style="color:#FFCC16" class="lnr lnr-clock"></span>&nbsp; <?php echo $stime ?> - <?php echo $etime; ?></h5>
 				
 				
 				
@@ -427,7 +428,7 @@ function createMarker(results) {
 						$etime=$shop->end_time."AM";
 					}
 				?>
-				<h5><span style="color:#FFCC16" class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
+				<h5 style="display:none"><span style="color:#FFCC16" class="lnr lnr-clock"></span>&nbsp; <?php echo $stime; ?> - <?php echo $etime; ?></h5>
 							
 				<div align="center"><a href="vendor/<?php echo $shop->name;?>" class="btn btn-success radiusoff" style="background-color:#FFCC16; color:black !important; border-color:#FFCC16;">View Shop & Book</a></div>
 			</div> 
