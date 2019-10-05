@@ -87,9 +87,9 @@
                           <th>Sno</th>
 						  <th>Order Id</th>
 						  
-						  <th>Shop Name</th>
+						  <th>Rhino Name</th>
                           <th>Service Name</th>
-                          <th>Booking Date</th>
+                          <th>Booking Dates</th>
 						  
 						  <th>Booking Time</th>
 						  <th>User Phone No</th>
@@ -100,10 +100,12 @@
 						  <th>City</th>
 						  <th>Pincode</th>
 						  
-						  <th>Booking Note</th>
+						  <th>Task Description</th>
 						  
-						  <th>Vendor Amount</th>
-						  <th>Admin Amount</th>
+						  <th>Rhino Amount</th>
+						  <th>Trust Fee</th>
+						<th>Service Tax</th>
+						<th>Total Amount</th>
 						  <th>Payment Mode</th>
 						  
 						  <th>Txn Id</th>
@@ -225,10 +227,14 @@
 						   <td><?php echo $viewbook->booking_note;?></td>
 						   
 						   
-						   <td><?php echo $viewbook->total_amt - $viewbook->admin_commission.' '.$setting[0]->site_currency;?></td>
+						   <td><?php echo $viewbook->subtotal_amt.' '.$setting[0]->site_currency;?></td>
 						   
 						   <td><?php echo $viewbook->admin_commission.' '.$setting[0]->site_currency;?></td>
 						   
+						<td><?php echo $viewbook->tax_amt.' '.$setting[0]->site_currency;?></td>
+
+						<td><?php echo $viewbook->total_amt.' '.$setting[0]->site_currency;?></td>
+
 						   <td><?php echo $viewbook->payment_mode;?></td>
 						   
 						   <td>
