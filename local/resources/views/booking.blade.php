@@ -9,7 +9,11 @@
    @include('style')
 	
 
-
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" /> 
+   
 <script src="<?php echo $url;?>/js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
@@ -115,54 +119,73 @@ foreach($seller_services as $viewservices)
 <input type="hidden" id="services_id" name="services_id" value="<?php echo $subservice[0]->subid; ?>">
 
 
-<h5><strong>Select Date <span class="require">*</span></strong></h5>
+<h5><strong>Select one Date or Range <span class="require">*</span></strong></h5>
 <script type="text/javascript">
 
+ 
+$(function() {
 
-  $(function() {
-
- $('#datepicker').datepicker({
-
-changeMonth: true,
-changeYear: true,
-minDate: 0,
-beforeShowDay: function (date) {
-        var day = date.getDay();
-	var month = date.getMonth();
-	var dateDay = date.getDate();
-	
-
-	if(<?php echo $monthsDays; ?>)
-	{
-		return [false];
-	}
-	
-	else 
-	{	
-		return [(<?php echo $days; ?>)];
-	}
-    
-
-	}
-});
-    
-
-	
-
+var cur_date = new Date();
+cur_date.setDate(cur_date.getDate()+1);
 var date = new Date('<?php echo $exp_date; ?>');
-
 var currentMonth = date.getMonth();
 var currentDate = date.getDate();
 var currentYear = date.getFullYear();
+var mx_date = new Date(currentYear,currentMonth,currentDate);
 
-$("#datepicker").datepicker( "option", "maxDate", new Date(currentYear, currentMonth, currentDate));
-});   
+$('#datepicker').daterangepicker({
 
+minDate: cur_date,
+maxDate: mx_date,
+
+isInvalidDate: function (date) 
+{
+    var formatted = date.format('DD-MM-YYYY');
+
+    return [<?php echo $boocked_dates_string; ?>].indexOf(formatted) > -1;
+},
+
+maxSpan: 
+{
+    days: 5
+},
+    
+autoUpdateInput: false,
+locale: 
+{
+    cancelLabel: 'Clear'
+}
+
+
+
+});
+
+
+  $('input[name="datepicker"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+  });
+
+  $('input[name="datepicker"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
+
+
+
+
+
+$("#datepicker").hover(function() {
+  $(this).css("cursor","pointer")
+});
+
+
+
+});
+ 
  </script>
  
  
     
-<input type="text" class="form-control validate[required]" id="datepicker" name="datepicker" > 
+<input type="text" class="form-control validate[required]" id="datepicker" name="datepicker" readonly="readonly" placeholder="Month/Day/Year"> 
 <br/>
 <h5><strong>Address <span class="require">*</span></strong></h5>
 <input type="text" class="form-control validate[required]" id="book_address" name="book_address" > 
@@ -239,7 +262,7 @@ for($i=$start_time;$i<=$end_time;$i++)
                          if(Auth::check()) {
 							 if($wallet_balance > 0){
 						?> 
-	                   <option value="wallet" >wallet [<?php echo $wallet_balance.' '.$payssetting[0]->site_currency;?>] </option>
+	                   <option value="wallet" style="display:none">wallet [<?php echo $wallet_balance.' '.$payssetting[0]->site_currency;?>] </option>
 					   
 							 <?php } } ?>
 	
@@ -254,7 +277,7 @@ for($i=$start_time;$i<=$end_time;$i++)
 
 
 <div class="col-md-12">
-<h5><strong>Note </strong></h5>
+<h5><strong>Describe Your Task </strong></h5>
 <textarea name="book_note" id="book_note" class="form-control"></textarea>
 </div>
 
@@ -281,10 +304,10 @@ for($i=$start_time;$i<=$end_time;$i++)
 <?php if (Auth::guest()) {?>
 
 <div class="container">
-<h3 class="left">Create New Account</h3>
+<h3 class="left" style="color:white">Create New Account</h3>
 <br/>
 <div class="form-group col-md-3">
-<label>Username <span class="require">*</span></label>
+<label style="color:white">Username <span class="require">*</span></label>
 <input type="text" id="name" name="name" class="form-control validate[required]">
 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -294,7 +317,7 @@ for($i=$start_time;$i<=$end_time;$i++)
 </div>
 
 <div class="form-group col-md-3">
-<label>Email <span class="require">*</span></label>
+<label style="color:white">Email <span class="require">*</span></label>
 <input type="email" id="email" name="email" class="form-control validate[required,custom[email]]">
 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -305,19 +328,19 @@ for($i=$start_time;$i<=$end_time;$i++)
 
 
 <div class="form-group col-md-3">
-<label>Phone No <span class="require">*</span></label>
+<label style="color:white">Phone No <span class="require">*</span></label>
  <input id="phoneno" type="text" class="form-control validate[required]" name="phoneno">
 </div>
 
 <div class="form-group col-md-3">
-<label>Password <span class="require">*</span></label>
+<label style="color:white">Password <span class="require">*</span></label>
 <input id="password" type="password" class="form-control validate[required]" name="password">
 </div>
 
 
 
 <div class="form-group col-md-3">
-<label>Gender <span class="require">*</span></label>
+<label style="color:white">Gender <span class="require">*</span></label>
 <select name="gender" class="form-control validate[required]">
 							  
 							  <option value=""></option>
@@ -327,7 +350,7 @@ for($i=$start_time;$i<=$end_time;$i++)
 </div>
 
 <div class="form-group col-md-3">
-<label>User Type <span class="require">*</span></label>
+<label style="color:white">User Type <span class="require">*</span></label>
 <select name="usertype" class="form-control validate[required]">
 							  
 							  <option value=""></option>
