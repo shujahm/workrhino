@@ -62,8 +62,9 @@
 			<h3> Booking Details</h3>
 			<p> Booking Id - <?php echo $booking_id;?></p>
 			<p> Services Name - <?php echo $ser_name;?></p> 	
-			<p> Booking Date - <?php echo $booking_date;?></p> 	
-			<p> Booking Time - <?php echo $final_time;?></p> 
+			<p style="display:none"> Booking Date - <?php echo $booking_date;?></p> 	
+			<p style="display:none"> Booking Time - <?php echo $final_time;?></p>
+			<p> Booking Dates - <?php echo $booking_days_dates;?></p> 
 			<p> Total Amount - <?php echo $total_amt.' '.$currency;?></p> 				
 			
 	<h3> User Details</h3>
