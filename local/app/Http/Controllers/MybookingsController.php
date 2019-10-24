@@ -168,8 +168,8 @@ class MybookingsController extends Controller
 				  ->leftJoin('users', 'users.email', '=', 'shop.seller_email')
 				 ->where('booking.user_email', '=', $email)
 				 ->where('shop.status', '=', 'approved')
-				  ->whereIn('booking.status', array('paid','refund','pending'))
-				  
+				  ->whereIn('booking.status', array('paid','refund','pending','cancelled','failed'))
+				  ->where('booking.total_amt', '!=' , 0)
 				  
 				  ->orderBy('booking.book_id', 'desc')
 				  /*->groupBy('booking.shop_id')*/
@@ -183,8 +183,9 @@ class MybookingsController extends Controller
 				  ->leftJoin('users', 'users.email', '=', 'shop.seller_email')
 				 ->where('booking.user_email', '=', $email)
 				  ->where('shop.status', '=', 'approved')
-				  ->whereIn('booking.status', array('paid','refund','pending'))
-				  ->orderBy('booking.book_id', 'desc')
+				  ->whereIn('booking.status', array('paid','refund','pending','cancelled','failed'))
+				->where('booking.total_amt', '!=' , 0)  
+				->orderBy('booking.book_id', 'desc')
 				  ->groupBy('booking.shop_id')
 				 ->count();
 				 
