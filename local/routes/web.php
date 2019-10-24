@@ -63,7 +63,7 @@ Route::post('/booking', ['as' => 'booking', 'uses' => 'BookingController@sangvis
 
 Route::get('/booking_info', 'BookinginfoController@sangvish_viewbook');
 
-Route::post('/booking_info', ['as' => 'booking_info', 'uses' => 'PaymentController@sangvish_showpage']);
+Route::post('/booking_info', ['as' => 'booking_info', 'uses' => 'PaymentController@sangvish_showpage'])->middleware('homeRedirect');
 /* not working */
 Route::get('/payment/{sum_val}/{admin_email}', 'PaymentController@sangvish_showpage');
 
