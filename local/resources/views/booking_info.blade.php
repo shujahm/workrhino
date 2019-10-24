@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    
 
    @include('style')
 	
@@ -20,7 +20,7 @@
 
     <!-- slider -->
     
-	<?php $bookArr = explode("," , $booking[0]->booking_days_dates); ?>
+	<?php $bookArr = explode("," , $booking[0]->booking_days_dates); $bookTotalAmt = $booking[0]->total_amt; ?>
 	
 	
 	<div class="headerbg">
@@ -109,6 +109,9 @@ $total_sum = $sum + $get_tax;
 
 <input type="hidden" name="currency" value="<?php echo $currency;?>">
 
+<input type="hidden" name="bookTotalAmt" value="<?php echo $bookTotalAmt;?>">
+
+
 
 <input type="hidden" name="admin_email" value="<?php echo $adminemail;?>">
 
@@ -121,9 +124,16 @@ $total_sum = $sum + $get_tax;
 
 <input type="hidden" name="seller_email" value="<?php echo $selleremail;?>">
 
+<input type="hidden" name="shop_name" value="<?php echo $shopname;?>">
+
+<input type="hidden" name="shop_phone_no" value="<?php echo $shopphoneno;?>">
+
 <input type="hidden" name="service_name" value="<?php echo $ser_name;?>">
 
 <input type="hidden" name="booking_date" value="<?php echo $booking[0]->booking_date;?>">
+
+<input type="hidden" name="booking_days_dates" value="<?php echo $booking[0]->booking_days_dates;?>">
+
 
 
 <button type="submit" value="PROCEED TO CHECKOUT" class="booknow right">PROCEED TO CHECKOUT</button>
