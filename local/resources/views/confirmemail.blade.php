@@ -61,7 +61,7 @@ $url = URL::to("/");
 	
 	
 	
-	<h3 align="center">Your email confirmation successful. Please <a href="<?php echo $url;?>/login">login</a> here</h3>
+	<h3 align="center">Your email confirmation successful. Please login here <a class="btn btn-primary" href="<?php echo $url;?>/login">Login</a> </h3>
 	
 	
 	</div>
