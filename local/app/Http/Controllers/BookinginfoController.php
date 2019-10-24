@@ -204,12 +204,14 @@ class BookinginfoController extends Controller
 		->where('id', '=', $shopid)
 		->get();
 	   $selleremail = $shoptbl[0]->seller_email;
+	$shopname = $shoptbl[0]->shop_name;
+	$shopphoneno = $shoptbl[0]->shop_phone_no;
 	   
 	   
 	   
 	   $data = array('booking' => $booking, 'selectedDays' => $selectedDays,'final_time' => $final_time, 'shop' => $shop, 'ser_name' => $ser_name, 'price' => $price,
 	   'commission_amt' => $commission_amt, 'commission_mode' => $commission_mode, 'currency' => $currency, 'sum' => $sum, 'adminemail' => $adminemail,
-	   'useremail' => $useremail, 'usernamer' => $usernamer, 'userphone' => $userphone, 'selleremail' => $selleremail, 'commission_from' => $commission_from,
+	   'useremail' => $useremail, 'usernamer' => $usernamer, 'userphone' => $userphone, 'selleremail' => $selleremail, 'shopname' => $shopname, 'shopphoneno' => $shopphoneno, 'commission_from' => $commission_from,
 	   'admin_amt' => $admin_amt, 'get_tax' => $get_tax, 'taxer' => $taxer, 'tax_price' => $tax_price);
 		return view('booking_info')->with($data);
 	   
