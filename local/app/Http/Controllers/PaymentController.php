@@ -339,6 +339,8 @@ class PaymentController extends Controller
 		$currency=$datas['currency'];
 		
 		 $seller_email =$datas['seller_email'];
+		$shop_name =$datas['shop_name'];
+		$shop_phone_no =$datas['shop_phone_no'];
 		
 		 $token =csrf_token();
 		 $id = Auth::user()->id;
@@ -441,8 +443,8 @@ $booking = DB::table('booking')
 		$paypal_url =$setts[0]->paypal_url;
 		
 		
-		Mail::send('bookinguseremail', ['booking_id' => $booking_id, 'ser_name' => $ser_name, 'booking_date' => $booking_date, 'final_time' => $final_time, 'total_amt' => $total_amt,
-			 'currency' => $currency, 'site_logo' => $site_logo, 'site_name' => $site_name], function ($message)
+		Mail::send('bookinguseremail', ['booking_id' => $booking_id, 'ser_name' => $ser_name, 'booking_date' => $booking_date, 'booking_days_dates' => $booking[0]->booking_days_dates, 'final_time' => $final_time, 'total_amt' => $total_amt,
+			 'currency' => $currency, 'site_logo' => $site_logo, 'site_name' => $site_name, 'shop_name' => $shop_name, 'shop_phone_no' => $shop_phone_no, 'seller_email' => $seller_email], function ($message)
         {
             $message->subject('Booking Details');
 			
@@ -453,14 +455,14 @@ $booking = DB::table('booking')
         }); 
 		
 		
-		
+			
 
        
 	   
 	   
 	   
-	   Mail::send('bookingadminemail', ['booking_id' => $booking_id, 'ser_name' => $ser_name, 'booking_date' => $booking_date, 'final_time' => $final_time, 'total_amt' => $total_amt,
-			 'currency' => $currency, 'site_logo' => $site_logo, 'site_name' => $site_name, 'user_email' => $user_email, 'usernamer' => $usernamer, 'userphone' => $userphone], function ($message)
+	   Mail::send('bookingadminemail', ['booking_id' => $booking_id, 'ser_name' => $ser_name, 'booking_date' => $booking_date, 'booking_days_dates' => $booking[0]->booking_days_dates, 'final_time' => $final_time, 'total_amt' => $total_amt,
+			 'currency' => $currency, 'site_logo' => $site_logo, 'site_name' => $site_name, 'user_email' => $user_email, 'usernamer' => $usernamer, 'userphone' => $userphone, 'shop_name' => $shop_name, 'shop_phone_no' => $shop_phone_no, 'seller_email' => $seller_email], function ($message)
         {
             $message->subject('New Order Received');
 			
@@ -474,7 +476,7 @@ $booking = DB::table('booking')
 	
 	
 	
-	Mail::send('bookingadminemail', ['booking_id' => $booking_id, 'ser_name' => $ser_name, 'booking_date' => $booking_date, 'final_time' => $final_time, 'total_amt' => $total_amt,
+	Mail::send('bookingselleremail', ['booking_id' => $booking_id, 'ser_name' => $ser_name, 'booking_date' => $booking_date, 'booking_days_dates' => $booking[0]->booking_days_dates, 'final_time' => $final_time, 'total_amt' => $total_amt,
 			 'currency' => $currency, 'site_logo' => $site_logo, 'site_name' => $site_name,  'user_email' => $user_email, 'usernamer' => $usernamer, 'userphone' => $userphone], function ($message)
         {
             $message->subject('New Order Received');
