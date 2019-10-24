@@ -51,6 +51,7 @@ class BookingController extends Controller
 		->where('shop_id', '=' , $shop_id)
 		->where('curr_date', '>=', $two_month_back_date)
 		->where('reject', '=' , " ")
+		->where('total_amt', '!=' , 0)
 		->get();
 		$boocked_dates_string = "";
 		
@@ -192,6 +193,7 @@ class BookingController extends Controller
 		->where('shop_id', '=' , $shop_id)
 		->where('curr_date', '>=', $two_month_back_date)
 		->where('reject', '=' , " ")
+		->where('total_amt', '!=' , 0)
 		->get();
 		$boocked_dates_string = "";
 		
