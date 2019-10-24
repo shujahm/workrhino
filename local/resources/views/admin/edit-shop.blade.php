@@ -110,7 +110,7 @@
 					  
 					  
 					  <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Shop Phone No
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Rhino Phone No
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="shop_phone_no" class="form-control col-md-7 col-xs-12"  name="shop_phone_no" value="<?php echo $editshop[0]->shop_phone_no; ?>" required="required" type="text">
@@ -278,10 +278,10 @@
 						
 						
 						<div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Booking Per Hour
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Booking Per 8 Hour
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="booking_per_hour" class="form-control col-md-7 col-xs-12"  name="booking_per_hour" value="<?php echo $editshop[0]->booking_per_hour; ?>"  type="text" disabled>
+                          <input id="booking_per_hour" class="form-control col-md-7 col-xs-12"  name="booking_per_hour" value="<?php echo $editshop[0]->booking_per_hour; ?>"  type="text">
                         
 					   </div>
                       </div>
