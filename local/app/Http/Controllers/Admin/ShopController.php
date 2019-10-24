@@ -139,6 +139,9 @@ class ShopController extends Controller
 		
 		$shop_phone_no=$data['shop_phone_no'];
 		$shop_desc=$data['description'];
+		$booking_per8_hour=$data['booking_per_hour'];
+
+
 		
 		
 		$status=$data['status'];
@@ -164,7 +167,7 @@ class ShopController extends Controller
 		{
 			
 			
-			DB::update('update shop set shop_name="'.$shop_name.'",address="'.$shop_address.'",shop_phone_no="'.$shop_phone_no.'",description="'.$shop_desc.'",featured="'.$featured.'",
+			DB::update('update shop set shop_name="'.$shop_name.'",address="'.$shop_address.'",shop_phone_no="'.$shop_phone_no.'",description="'.$shop_desc.'",booking_per_hour="'.$booking_per8_hour.'",featured="'.$featured.'",
 			status="'.$status.'",admin_email_status="'.$admin_email_status.'" where id = ?', [$editid]);
 			
 					
