@@ -62,9 +62,14 @@
 			<h3> Booking Details</h3>
 			<p> Booking Id - <?php echo $booking_id;?></p>
 			<p> Services Name - <?php echo $ser_name;?></p> 	
-			<p> Booking Date - <?php echo $booking_date;?></p> 	
-			<p> Booking Time - <?php echo $final_time;?></p> 
-			<p> Total Amount - <?php echo $total_amt.' '.$currency;?></p> 				
+			<p> Booking Dates - <?php echo $booking_days_dates;?></p> 
+			<p> Total Amount - <?php echo $total_amt.' '.$currency;?></p> 
+
+			<h3> Selected Rhino Details</h3>
+	<p> Name - <?php echo $shop_name;?></p>
+	<p> Email - <?php echo $seller_email;?></p>
+	<p> Phone - <?php echo $shop_phone_no;?></p>	
+					
 			
 	
 	
