@@ -65,7 +65,7 @@
                     <i class=" fa fa-users icon-rounded icon1"></i>
                     <div class="stats">
                       <h5><strong><?php if(!empty($total_seller)){?><?php echo $total_seller;?><?php } else { ?>0<?php } ?></strong></h5>
-                      <span>Total Sellers</span>
+                      <span>Total Registered Rhinos</span>
                     </div>
                 </div>
         	</div>
@@ -106,7 +106,7 @@
                     <i class="fa fa-shopping-cart icon-rounded icon5"></i>
                     <div class="stats">
                       <h5><strong><?php if(!empty($total_shop)){?><?php echo $total_shop;?><?php } else { ?>0<?php } ?></strong></h5>
-                      <span> Total Shop</span>
+                      <span> Total Approved Rhinos</span>
                     </div>
                 </div>
         	</div>
