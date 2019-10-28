@@ -303,6 +303,8 @@ class BookingController extends Controller
 					 ->count(); 
 		//if(	$count < $booking_per_hour )
 		//{
+		if($booking_days_dates_string != "")
+		{
 			
 			
 			
@@ -423,12 +425,12 @@ class BookingController extends Controller
 			
 			 
 			
-		//}
-		//else
-		//{
+		}
+		else if($booking_days_dates_string == "")
+		{
 			/*return back()->with('error', 'That time already booked.Please select another time');*/
-		//	return redirect()->back()->with('message', 'That time already booked.Please select another time');
-		//}
+			return redirect()->back()->with('message', 'That Date already booked.Please select another date');
+		}
 				 
 		
 		
