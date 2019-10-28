@@ -262,7 +262,7 @@ for($i=$start_time;$i<=$end_time;$i++)
                          if(Auth::check()) {
 							 if($wallet_balance > 0){
 						?> 
-	                   <option value="wallet" style="display:none">wallet [<?php echo $wallet_balance.' '.$payssetting[0]->site_currency;?>] </option>
+	                   <!--<option value="wallet" style="display:none">wallet [<?php echo $wallet_balance.' '.$payssetting[0]->site_currency;?>] </option>-->
 					   
 							 <?php } } ?>
 	
