@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>Shop Request</title>
+    <title>Rhino Registration Request</title>
 
   
 	
@@ -59,16 +59,16 @@
 			<div align="center"><h2><?php echo $site_name;?></h2></div>
 			<?php } ?>
 			
-			<h3> New Shop Created</h3>
+			<h3> New Rhino Registered</h3>
 			<p> Shop Name - <?php echo $shop_name;?></p>
 			<p> Address - <?php echo $address;?></p> 	
 			<p> Shop Phone No - <?php echo $shop_phone_no;?></p> 	
 			<p> Description - <?php echo $description;?></p> 	
-			<p> Shop Start Time - <?php echo $stime;?></p> 	
-			<p> Shop End Time - <?php echo $etime;?></p>	
-			<p> Advance Booking Upto - <?php echo $booking_opening_days;?></p> 	
+			<p style="display:none"> Shop Start Time - <?php echo $stime;?></p> 	
+			<p style="display:none"> Shop End Time - <?php echo $etime;?></p>	
+			<p style="display:none"> Advance Booking Upto - <?php echo $booking_opening_days;?></p> 	
 			
-			<p> Allowed Booking Per Hour - <?php echo $booking_per_hour;?></p> 
+			<p> Allowed Booking Per 8 Hour - <?php echo $booking_per_hour;?></p> 
 	
 	
 	
