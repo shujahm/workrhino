@@ -355,7 +355,7 @@ for($i=$start_time;$i<=$end_time;$i++)
 							  
 							  <option value=""></option>
 							   <option value="0">User</option>
-							   <option value="2" style="display:none">Seller</option>
+							   <!--<option value="2" style="display:none">Seller</option>-->
 							</select>
 </div>
 <?php } ?>
