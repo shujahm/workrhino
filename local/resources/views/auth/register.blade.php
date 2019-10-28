@@ -86,7 +86,7 @@ $setid=1;
 							  
 							  <option value="">User Type</option>
 							   <option value="0">User</option>
-							   <option style="display:none" value="2">Rhino</option>
+							   <!--<option style="display:none" value="2">Rhino</option>-->
 							</select>                              
                         </div>
 
