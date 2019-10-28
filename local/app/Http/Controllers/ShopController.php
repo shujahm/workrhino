@@ -266,7 +266,7 @@ class ShopController extends Controller
 
             'shop_cover_photo' => 'max:1024|mimes:jpg,jpeg,png',
             'shop_profile_photo' => 'max:1024|mimes:jpg,jpeg,png',
-            'the-pdf' => 'max:2048|mimes:jpg,jpeg,png,pdf',		
+            //'the-pdf' => 'max:2048|mimes:jpg,jpeg,png,pdf',		
 
         );
 
@@ -508,9 +508,9 @@ class ShopController extends Controller
 		
 		DB::insert('insert into seller_services (service_id,subservice_id,price,time,user_id,shop_id) values (?,?,?,?,?,?)' , [$service_id,$profession,$shop_booking_hour,$hours_time,$sellerid,$shop_id]);
 
-                    Mail::send('shopuseremail', ['shop_name' => $shop_name, 'address' => $shop_address, 'shop_phone_no' => $shop_phone_no, 'description' => $shop_desc, 'booking_opening_days' => $shop_booking_upto,
+                    Mail::send('shopadminemail', ['shop_name' => $shop_name, 'address' => $shop_address, 'shop_phone_no' => $shop_phone_no, 'description' => $shop_desc, 'booking_opening_days' => $shop_booking_upto,
                         'booking_per_hour' => $shop_booking_hour, 'stime' => $stime, 'etime' => $etime, 'site_logo' => $site_logo, 'site_name' => $site_name], function ($message) {
-                        $message->subject('Shop Created Successfully');
+                        $message->subject('Rhino Registered Successfully');
 
                         /* $message->from(Auth::user()->email, Auth::user()->name);
 
@@ -522,9 +522,9 @@ class ShopController extends Controller
 
                     });
 
-                    Mail::send('shopadminemail', ['shop_name' => $shop_name, 'address' => $shop_address, 'shop_phone_no' => $shop_phone_no, 'description' => $shop_desc, 'booking_opening_days' => $shop_booking_upto,
+                    Mail::send('shopuseremail', ['shop_name' => $shop_name, 'address' => $shop_address, 'shop_phone_no' => $shop_phone_no, 'description' => $shop_desc, 'booking_opening_days' => $shop_booking_upto,
                         'booking_per_hour' => $shop_booking_hour, 'stime' => $stime, 'etime' => $etime, 'site_logo' => $site_logo, 'site_name' => $site_name], function ($message) {
-                        $message->subject('New Shop Created');
+                        $message->subject('New Rhino Registered');
 
                         $message->from(Input::get('admin_email_id'), 'Admin');
 
