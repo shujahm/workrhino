@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Responsive\Http\Requests;
 use Responsive\User;
 
+use URL;
 use Mail;
 use Auth;
 
@@ -316,7 +317,9 @@ class BookingController extends Controller
 				$getidvals =DB::table('users')
 			          ->orderBy('id', 'desc')
 					  ->get();
-            $usernewids = $getidvals[0]->id+1;				
+		$statement = DB::select("SHOW TABLE STATUS LIKE 'users'");
+		$usernewids = $statement[0]->Auto_increment;
+            //$usernewids = $getidvals[0]->id+1;				
 			}
 			else if (Auth::check())
 			{
@@ -369,10 +372,39 @@ class BookingController extends Controller
 				}
 				else
 				{
-				
-				DB::insert('insert into users (name,email,password,phone,admin,gender,remember_token) values (?, ?, ?, ?, ?, ?, ?)', [$name,$email,$password,$phoneno,
+				$keyval = uniqid();
+				$url = URL::to("/");
+				$site_logo=$url.'/local/images/settings/'.$setts[0]->site_logo;
+				$site_name = $setts[0]->site_name;
+				$admin_idd=1;
+				$admin_email = DB::table('users')
+                		->where('id', '=', $admin_idd)
+                		->get();
+				$adminemail = $admin_email[0]->email;
+				$adminname = $admin_email[0]->name;
+
+				DB::insert('insert into users (name,email,password,confirm_key,phone,admin,gender,remember_token) values (?, ?, ?, ?, ?, ?, ?, ?)', [$name,$email,$password,$keyval,$phoneno,
 				$usertype,$gender,$token]);
-				
+
+				$datas = [
+            				'name' => $name, 'email' => $email, 'keyval' => $keyval, 'site_logo' => $site_logo,
+					'site_name' => $site_name, 'url' => $url
+        					];
+		
+		Mail::send('confirm_mail', $datas , function ($message) use ($adminemail,$adminname,$email)
+        {
+		
+		
+		
+		
+            $message->subject('Email Confirmation for Registration');
+			
+            $message->from($adminemail, $adminname);
+
+            $message->to($email);
+
+        }); 
+
 				
 				if (Auth::guest()) 
 				{
