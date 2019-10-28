@@ -146,7 +146,7 @@
 		
 		
 		<div class="form-group">
-                            <label for="name" class="col-md-12">Cover Photo</label>
+                            <label for="name" class="col-md-12">Cover Photo<span class="require"> *</span></label>
                             <div class="col-md-12 littlebit"><span class="require">[Please select an image 1400px / 300px]</span></div>
                             <div class="col-md-12">
                                  <input type="file" id="shop_cover_photo" name="shop_cover_photo" class="form-control validate[required]">
@@ -256,6 +256,7 @@
               changeMonth: true,
               changeYear: true,
               minDate: 0,
+		maxDate: 30,
             dateFormat: 'yy/mm/dd',
 
 
@@ -404,7 +405,7 @@
 						
 						
 						<div class="form-group">
-                            <label for="name" class="col-md-12">Profile Photo</label>
+                            <label for="name" class="col-md-12">Profile Photo<span class="require"> *</span></label>
                                <div class="col-md-12 littlebit"><span class="require">[Please select an image 150px / 150px]</span></div>
                             <div class="col-md-12">
                                  <input type="file" id="shop_profile_photo" name="shop_profile_photo" class="form-control validate[required]">
@@ -427,7 +428,7 @@
 					  
 					  
 					  <div class="form-group">
-                            <label for="name" class="col-md-12">Working Days <span class="require">*</span></label>
+                            <label for="name" class="col-md-12">Working Days <span></span></label>
 
                             <div class="col-md-12">
 							<?php foreach($daytxt as $daytxtkey => $daytxtvalue){?>
@@ -461,11 +462,11 @@
 				
 				<div class="form-group">
                             <label for="name" class="col-md-12">Registration document</label>
-                               <div class="col-md-12 littlebit"><span class="require">[Please upload pdf or image only]</span></div>
+                               <div class="col-md-12 littlebit"><span>[Please upload pdf or image only]</span></div>
                             <div class="col-md-12">
 							
 							
-							<input type="file" name="the-pdf" id="the-pdf" class="form-control validate[required]">
+							<input type="file" name="the-pdf" id="the-pdf" class="form-control">
                                  
                                  @if ($errors->has('the-pdf'))
                                     <span class="help-block" style="color:red;">
