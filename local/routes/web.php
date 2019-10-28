@@ -58,7 +58,7 @@ Route::post('/forgot', ['as' => 'forgot', 'uses' => 'IndexController@sangvish_fo
 Route::get('/reset/{token}', 'IndexController@sangvish_reset');
 Route::post('/reset', ['as' => 'reset', 'uses' => 'IndexController@sangvish_resetdata']);
 
-Route::get('/booking/{shop_id}/{service_id}/{userid}', 'BookingController@sangvish_showpage');
+Route::get('/booking/{shop_id}/{service_id}/{userid}', 'BookingController@sangvish_showpage')->middleware('noCache');
 Route::post('/booking', ['as' => 'booking', 'uses' => 'BookingController@sangvish_savedata']);
 
 Route::get('/booking_info', 'BookinginfoController@sangvish_viewbook');
