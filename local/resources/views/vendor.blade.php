@@ -172,7 +172,7 @@
 				</div>
 				
 				<?php if(Auth::check()) {?>
-		<?php if(Auth::user()->id!=$shop[0]->user_id){?>
+		<?php if(Auth::user()->admin!=2){?>
 					<div class="col-md-12">
 					<a href="<?php echo $url;?>/booking/<?php echo $vendor;?>/<?php echo $sellerservice->subid;?>/<?php echo $userid;?>" class="radiusoff">
 					<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="booknow radiusoff" value="Book Now"></a>
